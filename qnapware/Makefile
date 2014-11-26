@@ -45,4 +45,4 @@ define Package/qnapware/conffiles
 /opt/etc/profile
 endef
 
-$(eval $(call BuildPackage,uclibc-opt))
+$(eval $(call BuildPackage,qnapware))
