@@ -42,7 +42,7 @@ TARGET_LDFLAGS += \
 
 define Package/wdfs/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/wdfs $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/wdfs $(1)/opt/bin
 endef
 
 $(eval $(call BuildPackage,wdfs))

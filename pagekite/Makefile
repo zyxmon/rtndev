@@ -45,7 +45,7 @@ define Package/$(PKG_NAME)/conffiles
 endef
 
 define Build/Compile
-	$(call Build/Compile/PyMod,,install --prefix=/opt --root=$(PKG_INSTALL_DIR))
+	$(call Build/Compile/PyMod,,install --prefix=/Apps/opt --root=$(PKG_INSTALL_DIR))
 endef
 
 define Package/$(PKG_NAME)/install
@@ -56,7 +56,7 @@ define Package/$(PKG_NAME)/install
 
 	$(INSTALL_DIR) $(1)/opt/bin $(1)/opt/etc/pagekite.d $(1)/opt/var/log $(1)/opt/etc/init.d
 	$(CP) \
-	    $(PKG_INSTALL_DIR)/opt/bin/* \
+	    $(PKG_INSTALL_DIR)/Apps/opt/bin/* \
 	    $(1)/opt/bin/
 	$(INSTALL_CONF) ./files/pagekite.rc $(1)/opt/etc/pagekite.d
 endef

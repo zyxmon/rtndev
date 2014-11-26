@@ -40,10 +40,10 @@ endef
 
 define Package/portspoof/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/portspoof $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/portspoof $(1)/opt/bin
 	$(INSTALL_DIR) $(1)/opt/etc
 	$(INSTALL_CONF) \
-	    $(PKG_INSTALL_DIR)/opt/etc/portspoof{.conf,_signatures} $(1)/opt/etc
+	    $(PKG_INSTALL_DIR)/Apps/opt/etc/portspoof{.conf,_signatures} $(1)/opt/etc
 endef
 
 $(eval $(call BuildPackage,portspoof))

@@ -6,8 +6,8 @@
   	user			= root
 - 	server			= /usr/bin/ziproxy
 -	server_args		= -i -c /etc/ziproxy/ziproxy.conf
-+ 	server			= /opt/bin/ziproxy
-+	server_args		= -i -c /opt/etc/ziproxy/ziproxy.conf
++ 	server			= /Apps/opt/bin/ziproxy
++	server_args		= -i -c /Apps/opt/etc/ziproxy/ziproxy.conf
   	log_on_success		+= USERID
   	log_on_failure		+= USERID
   	disable			= yes

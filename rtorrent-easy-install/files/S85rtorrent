@@ -5,9 +5,9 @@ PROCS=rtorrent
 ARGS="-D -n -o import=/opt/etc/rtorrent/rtorrent.conf"
 PREARGS="screen -dmS rtorrent"
 DESC=$PROCS
-PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PATH=/Apps/opt/sbin:Apps/opt/bin:Apps/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 if [ -z "`pidof $PROCS`" ]; then
     rm -f /opt/var/rpc.socket
 fi
-. /opt/etc/init.d/rc.func
+. /Apps/opt/etc/init.d/rc.func

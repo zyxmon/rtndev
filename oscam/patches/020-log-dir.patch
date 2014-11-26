@@ -7,9 +7,9 @@
 -logfile       = /var/log/oscam/oscam.log
 -usrfile       = /var/log/oscam/oscamuser.log
 -cwlogdir      = /var/log/oscam/cw
-+logfile       = /opt/var/log/oscam/oscam.log
-+usrfile       = /opt/var/log/oscam/oscamuser.log
-+cwlogdir      = /opt/var/log/oscam/cw
++logfile       = /Apps/opt/var/log/oscam/oscam.log
++usrfile       = /Apps/opt/var/log/oscam/oscamuser.log
++cwlogdir      = /Apps/opt/var/log/oscam/cw
  
  # monitor
  
@@ -18,7 +18,7 @@
  samples       = 5
  penalty       = 1
 -aclogfile     = /var/log/oscam/aclog.log
-+aclogfile     = /opt/var/log/oscam/aclog.log
++aclogfile     = /Apps/opt/var/log/oscam/aclog.log
  denysamples   = 9
  
  # protocols

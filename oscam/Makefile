@@ -39,7 +39,7 @@ define Package/oscam/conffiles
 endef
 
 CMAKE_OPTIONS += \
-	-DCS_CONFDIR=/opt/etc/oscam \
+	-DCS_CONFDIR=/Apps/opt/etc/oscam \
 	-DLIBUSBDIR=$(STAGING_DIR)/opt \
 	-DOPTIONAL_INCLUDE_DIR=$(STAGING_DIR)/opt/include \
 	-DOPTIONAL_LINK_DIR=$(STAGING_DIR)/opt/lib \
@@ -54,9 +54,9 @@ endef
 
 define Package/oscam/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/oscam $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/oscam $(1)/opt/bin
 	$(INSTALL_DIR) $(1)/opt/etc/oscam
-	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/opt/share/doc/oscam/example/* $(1)/opt/etc/oscam
+	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/Apps/opt/share/doc/oscam/example/* $(1)/opt/etc/oscam
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
 	$(INSTALL_BIN) ./files/S59oscam $(1)/opt/etc/init.d
 	$(INSTALL_DIR) $(1)/opt/var/log/oscam/cw

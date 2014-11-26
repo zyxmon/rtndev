@@ -6,13 +6,13 @@
  
 -  strcpy(d_spool,"/var/spool/sms/outgoing");
 -  strcpy(d_incoming,"/var/spool/sms/incoming");
-+  strcpy(d_spool,"/opt/var/spool/sms/outgoing");
-+  strcpy(d_incoming,"/opt/var/spool/sms/incoming");
++  strcpy(d_spool,"/Apps/opt/var/spool/sms/outgoing");
++  strcpy(d_incoming,"/Apps/opt/var/spool/sms/incoming");
    *d_report = 0;
    *d_phonecalls = 0;
    *d_saved = 0;
 -  strcpy(d_checked,"/var/spool/sms/checked");
-+  strcpy(d_checked,"/opt/var/spool/sms/checked");
++  strcpy(d_checked,"/Apps/opt/var/spool/sms/checked");
    d_failed[0]=0;
    d_sent[0]=0;
    d_stats[0]=0;
@@ -22,8 +22,8 @@
  
 -  strcpy(infofile, "/var/run/smsd.working");
 -  strcpy(pidfile, "/var/run/smsd.pid");
-+  strcpy(infofile, "/opt/var/run/smsd.working");
-+  strcpy(pidfile, "/opt/var/run/smsd.pid");
++  strcpy(infofile, "/Apps/opt/var/run/smsd.working");
++  strcpy(pidfile, "/Apps/opt/var/run/smsd.pid");
  
    terminal = 0;
    os_cygwin = 0;
@@ -32,7 +32,7 @@
        int i;
  
 -      sprintf(tmp_data, "%s/smsd_data.XXXXXX", "/tmp");
-+      sprintf(tmp_data, "%s/smsd_data.XXXXXX", "/opt/tmp");
++      sprintf(tmp_data, "%s/smsd_data.XXXXXX", "/Apps/opt/tmp");
        if ((fd = mkstemp(tmp_data)) == -1)
          error = "Cannot create test data file.";
        else
@@ -43,7 +43,7 @@
    // 3.1.12: Temporary file in checked directory causes troubles with more than one modems:
    //sprintf(tmp_filename,"%s.XXXXXX", filename);
 -  sprintf(tmp_filename,"/tmp/smsd.XXXXXX");
-+  sprintf(tmp_filename,"/opt/tmp/smsd.XXXXXX");
++  sprintf(tmp_filename,"/Apps/opt/tmp/smsd.XXXXXX");
  
    close(mkstemp(tmp_filename));
    unlink(tmp_filename);
@@ -52,7 +52,7 @@
  					strcpy(te_charset, "ERROR");
  
 -				sprintf(tmp_filename, "%s/smsd.XXXXXX", "/tmp");
-+				sprintf(tmp_filename, "%s/smsd.XXXXXX", "/opt/tmp");
++				sprintf(tmp_filename, "%s/smsd.XXXXXX", "/Apps/opt/tmp");
  				fd = mkstemp(tmp_filename);
  				write(fd, answer, strlen(answer));
  				write(fd, "\n", 1);
@@ -63,10 +63,10 @@
  
  #ifndef __FreeBSD__
 -#define DEFAULT_CONFIGFILE "/etc/smsd.conf"
-+#define DEFAULT_CONFIGFILE "/opt/etc/smsd.conf"
++#define DEFAULT_CONFIGFILE "/Apps/opt/etc/smsd.conf"
  #else
 -#define DEFAULT_CONFIGFILE "%%PREFIX%%/etc/smsd.conf"
-+#define DEFAULT_CONFIGFILE "/opt/etc/smsd.conf"
++#define DEFAULT_CONFIGFILE "/Apps/opt/etc/smsd.conf"
  #endif
  
  #define DATETIME_DEFAULT "%y-%m-%d %H:%M:%S"
@@ -75,7 +75,7 @@
  #define CONCATENATED_DIR_FNAME "%s/%s-concatenated"
  
 -#define MM_CORE_FNAME "/tmp/mm_smsd_%i" /* %i is PID */
-+#define MM_CORE_FNAME "/opt/tmp/mm_smsd_%i" /* %i is PID */
++#define MM_CORE_FNAME "/Apps/opt/tmp/mm_smsd_%i" /* %i is PID */
  
  #define NUMS 64
  #define SIZE_NUM 16

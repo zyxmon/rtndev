@@ -79,16 +79,16 @@ endef
 
 define Package/pvpgn/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/bn{bot,cdb,chat,ftp,pass,stat} $(1)/opt/bin/
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/bni{2tga,build,extract,list} $(1)/opt/bin/
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/{sha1hash,tgainfo} $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/bn{bot,cdb,chat,ftp,pass,stat} $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/bni{2tga,build,extract,list} $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/{sha1hash,tgainfo} $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/etc
-	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/opt/etc/* $(1)/opt/etc/
+	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/Apps/opt/etc/* $(1)/opt/etc/
 	$(INSTALL_DIR) $(1)/opt/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/{bnetd,bntrackd,d2cs,d2dbs} $(1)/opt/sbin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/{bnetd,bntrackd,d2cs,d2dbs} $(1)/opt/sbin/
 	$(INSTALL_DIR) $(1)/opt/var/{bak,bnmail,chanlogs,charinfo,charsave,clans,files,ladders,reports,status,teams,users,userscdb}
 	$(INSTALL_DIR) $(1)/opt/var/bak/{charinfo,charsave}
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/opt/var/files/* $(1)/opt/var/files/
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/Apps/opt/var/files/* $(1)/opt/var/files/
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/$(PVPGN_SUPP)/* $(1)/opt/var/files/
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
 	$(INSTALL_BIN) ./files/S97bnetd $(1)/opt/etc/init.d

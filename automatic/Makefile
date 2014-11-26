@@ -50,9 +50,9 @@ endef
 
 define Package/automatic/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/automatic $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/automatic $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
-	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/opt/etc/automatic.conf-sample $(1)/opt/etc/
+	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/Apps/opt/etc/automatic.conf-sample $(1)/opt/etc/
 	$(INSTALL_BIN) ./files/S91automatic $(1)/opt/etc/init.d/
 endef
 

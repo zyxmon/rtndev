@@ -52,27 +52,27 @@ MAKE_VARS += \
 	XLDFLAGS="$(TARGET_LDFLAGS)" \
 
 MAKE_FLAGS += \
-	prefix="/opt" \
+	prefix="/Apps/opt" \
 
 define Package/librtmp/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/lib/librtmp.so.0 $(1)/opt/lib
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/lib/librtmp.so.0 $(1)/opt/lib
 	$(LN) librtmp.so.0 $(1)/opt/lib/librtmp.so
 endef
 
 define Package/rtmpdump/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/rtmpdump $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/rtmpdump $(1)/opt/bin
 	$(INSTALL_DIR) $(1)/opt/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/rtmp{gw,srv,suck} $(1)/opt/sbin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/rtmp{gw,srv,suck} $(1)/opt/sbin
 endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/lib/pkgconfig
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/librtmp.* $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/pkgconfig/librtmp.pc $(1)/opt/lib/pkgconfig
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/librtmp.* $(1)/opt/lib
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/pkgconfig/librtmp.pc $(1)/opt/lib/pkgconfig
 	$(INSTALL_DIR) $(1)/opt/include/librtmp
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/librtmp/*.h $(1)/opt/include/librtmp
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/librtmp/*.h $(1)/opt/include/librtmp
 endef
 
 $(eval $(call BuildPackage,librtmp))

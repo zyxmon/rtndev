@@ -5,7 +5,7 @@
  ; stored in shared memory also (for more quick access). Default value is
  ; "/tmp/eaccelerator".
 -eaccelerator.cache_dir = "/tmp/eaccelerator"
-+eaccelerator.cache_dir = "/opt/tmp/eaccelerator"
++eaccelerator.cache_dir = "/Apps/opt/tmp/eaccelerator"
  
  ; Enables or disables eAccelerator. Should be "1" for enabling or
  ; "0" for disabling. Default value is "1".
@@ -14,7 +14,7 @@
  ; Set the log file for eaccelerator. When this option isn't set then the data
  ; will be logged to stderr
 -eaccelerator.log_file = "/var/log/httpd/eaccelerator_log"
-+eaccelerator.log_file = "/opt/var/log/eaccelerator.log"
++eaccelerator.log_file = "/Apps/opt/var/log/eaccelerator.log"
  
  ; A string that's prepended to all keys. This allows two applications that use the
  ; same key names to run on the same host by setting this in .htaccess or in the main

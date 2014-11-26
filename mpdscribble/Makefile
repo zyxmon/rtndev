@@ -39,9 +39,9 @@ TARGET_CFLAGS += \
 
 define Package/mpdscribble/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/mpdscribble $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/mpdscribble $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/etc
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/etc/mpdscribble.conf $(1)/opt/etc/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/etc/mpdscribble.conf $(1)/opt/etc/
 endef
 
 define Package/mpdscribble/conffiles

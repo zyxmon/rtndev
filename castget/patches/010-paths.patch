@@ -5,7 +5,7 @@
  
    /* Build the channel directory path and ensure that it exists. */
 -  channeldir = g_build_filename(g_get_home_dir(), ".castget", NULL);
-+  channeldir = g_build_filename("/opt/var", ".castget", NULL);
++  channeldir = g_build_filename("/Apps/opt/var", ".castget", NULL);
  
    if (!g_file_test(channeldir, G_FILE_TEST_IS_DIR)) {
      if (g_mkdir(channeldir, 0755) < 0) {
@@ -14,7 +14,7 @@
    if (!rcfile)
      /* Supply default path name. */
 -    rcfile = g_build_filename(g_get_home_dir(), ".castgetrc", NULL);
-+    rcfile = g_build_filename("/opt/etc", "castgetrc", NULL);
++    rcfile = g_build_filename("/Apps/opt/etc", "castgetrc", NULL);
  
    kf = _configuration_file_open(rcfile);
  

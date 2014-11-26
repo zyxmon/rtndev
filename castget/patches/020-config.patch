@@ -5,7 +5,7 @@
  [*]
  id3contenttype=Podcast
 -spool=/home/tom/podcasts
-+spool=/opt/tmp/podcasts
++spool=/Apps/opt/tmp/podcasts
  
  #
  # Per-channel settings.
@@ -15,8 +15,8 @@
  url=http://radio.weblogs.com/0001014/categories/dailySourceCode/rss.xml
 -spool=/home/tom/podcasts/dsc
 -playlist=/home/tom/podcasts.m3u
-+spool=/opt/podcasts/dsc
-+playlist=/opt/tmp/podcasts/podcasts.m3u
++spool=/Apps/opt/podcasts/dsc
++playlist=/Apps/opt/tmp/podcasts/podcasts.m3u
  
  # This will define a channel with the identifier "yeast", set the RSS
  # feed URL for the channel, and set several ID3 tags.

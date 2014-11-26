@@ -5,7 +5,7 @@
  
  #ifndef FP_FILE
 -#  define FP_FILE           "p0f.fp"
-+#  define FP_FILE           "/opt/share/p0f.fp"
++#  define FP_FILE           "/Apps/opt/share/p0f.fp"
  #endif /* !FP_FILE */
  
  /* Initial permissions on log files: */

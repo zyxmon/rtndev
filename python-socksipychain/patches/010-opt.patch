@@ -4,6 +4,6 @@
  [install]
 -prefix = /usr
 -install_lib = /usr/lib/python2.7/site-packages
-+prefix = /opt
-+install_lib = /opt/lib/python2.7/site-packages
++prefix = /Apps/opt
++install_lib = /Apps/opt/lib/python2.7/site-packages
  single_version_externally_managed = yes

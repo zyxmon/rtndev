@@ -45,10 +45,10 @@ define Build/Configure
 endef
 define Package/splix/install
 	$(INSTALL_DIR) $(1)/opt/lib/cups/filter
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/lib/cups/filter/{raster,ps}toqpdl \
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/lib/cups/filter/{raster,ps}toqpdl \
 	    $(1)/opt/lib/cups/filter
 	$(INSTALL_DIR) $(1)/opt/share/cups/model
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/cups/model/* $(1)/opt/share/cups/model
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/cups/model/* $(1)/opt/share/cups/model
 endef
 
 $(eval $(call BuildPackage,splix))

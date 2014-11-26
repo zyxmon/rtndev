@@ -37,17 +37,17 @@ endef
 
 define Package/lcms/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/*icc $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/*icc $(1)/opt/bin
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/liblcms2.so* $(1)/opt/lib
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/liblcms2.so* $(1)/opt/lib
 endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/lib/pkgconfig
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/* $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/pkgconfig/lcms2.pc $(1)/opt/lib/pkgconfig
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/* $(1)/opt/lib
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/pkgconfig/lcms2.pc $(1)/opt/lib/pkgconfig
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/lcms2*.h $(1)/opt/include
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/lcms2*.h $(1)/opt/include
 endef
 
 $(eval $(call BuildPackage,lcms))

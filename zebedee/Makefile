@@ -38,7 +38,7 @@ define Build/Compile
 		LIBS="$(TARGET_LDFLAGS) -lcrypto -lz -lbz2 -lpthread" \
 		CFLAGS="$(TARGET_CFLAGS) -I. -I$(STAGING_DIR)/opt/include \
 			-I$(STAGING_DIR)/opt/include/openssl -DHAVE_PTHREADS" \
-		ROOTDIR="$(PKG_INSTALL_DIR)/opt" \
+		ROOTDIR="$(PKG_INSTALL_DIR)/Apps/opt" \
 		zebedee \
 	)
 endef

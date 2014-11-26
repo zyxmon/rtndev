@@ -35,7 +35,7 @@ endef
 
 define Package/esniper/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/esniper $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/esniper $(1)/opt/bin/
 endef
 
 $(eval $(call BuildPackage,esniper))

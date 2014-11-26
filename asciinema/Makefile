@@ -45,7 +45,7 @@ define Package/asciinema/install
 	$(INSTALL_DIR) $(1)$(PYTHON_PKG_DIR)
 	$(CP) $(PKG_INSTALL_DIR)$(PYTHON_PKG_DIR)/* $(1)$(PYTHON_PKG_DIR)
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/$(PKG_NAME) $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/$(PKG_NAME) $(1)/opt/bin
 	$(SED) '1s/#\!.*/#\!\/opt\/bin\/python/' $(1)/opt/bin/$(PKG_NAME)
 endef
 

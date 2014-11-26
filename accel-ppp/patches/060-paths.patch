@@ -5,13 +5,13 @@
  #include "memdebug.h"
  
 -static char *conf_ip_up = "/etc/ppp/ip-up";
-+static char *conf_ip_up = "/opt/etc/ppp/ip-up";
++static char *conf_ip_up = "/Apps/opt/etc/ppp/ip-up";
  static char *conf_ip_pre_up;
 -static char *conf_ip_down = "/etc/ppp/ip-down";
-+static char *conf_ip_down = "/opt/etc/ppp/ip-down";
++static char *conf_ip_down = "/Apps/opt/etc/ppp/ip-down";
  static char *conf_ip_change;
 -static char *conf_radattr_prefix = "/var/run/radattr";
-+static char *conf_radattr_prefix = "/opt/var/run/radattr";
++static char *conf_radattr_prefix = "/Apps/opt/var/run/radattr";
  static int conf_verbose = 0;
  
  static void *pd_key;
@@ -22,7 +22,7 @@
  #include "memdebug.h"
  
 -static char *def_chap_secrets = "/etc/ppp/chap-secrets";
-+static char *def_chap_secrets = "/opt/etc/ppp/chap-secrets";
++static char *def_chap_secrets = "/Apps/opt/etc/ppp/chap-secrets";
  static char *conf_chap_secrets;
  static int conf_encrypted;
  static in_addr_t conf_gw_ip_address = 0;

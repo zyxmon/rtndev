@@ -43,7 +43,7 @@
  prog:		$(OBJS)
  		@echo '#define DATA_VERSION "'Den68 ASCII/SQL/RRD/SNMP - building: `date` '"' >src/wmr_build.h
 -		$(CC) $(OBJS) -o wmrd $(LIBS) ${LDFLAGS} -Wl,-rpath,/usr/lib/wmr -L. -lwmr-alarm -lwmr-rrd -lwmr-sql -lwmr-file -lwmr-upd
-+		$(CC) $(OBJS) -o wmrd $(LIBS) ${LDFLAGS} -Wl,-rpath,/opt/lib/wmr -L. -lwmr-alarm -lwmr-rrd -lwmr-sql -lwmr-file -lwmr-upd
++		$(CC) $(OBJS) -o wmrd $(LIBS) ${LDFLAGS} -Wl,-rpath,/Apps/opt/lib/wmr -L. -lwmr-alarm -lwmr-rrd -lwmr-sql -lwmr-file -lwmr-upd
  		@rm -f $(OBJS)
 -		@${TOOLCHAINPATH}/bin/strip wmrd
 -		@./goftp.sh

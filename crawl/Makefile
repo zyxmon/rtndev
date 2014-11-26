@@ -39,10 +39,10 @@ define Build/Configure
 endef
 
 MAKE_FLAGS += \
-	prefix=/opt \
+	prefix=/Apps/opt \
 	DESTDIR=$(PKG_INSTALL_DIR) \
-	DATADIR=/opt/share/crawl/ \
-	SAVEDIR=/opt/var/crawl/ \
+	DATADIR=/Apps/opt/share/crawl/ \
+	SAVEDIR=/Apps/opt/var/crawl/ \
 	install
 
 define Build/Compile

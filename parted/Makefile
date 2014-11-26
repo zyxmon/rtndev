@@ -41,9 +41,9 @@ CONFIGURE_ARGS += \
 
 define Package/parted/install
 	$(INSTALL_DIR) $(1)/opt/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/part{ed,probe} $(1)/opt/sbin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/part{ed,probe} $(1)/opt/sbin
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libparted.so* $(1)/opt/lib
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libparted.so* $(1)/opt/lib
 endef
 
 $(eval $(call BuildPackage,parted))

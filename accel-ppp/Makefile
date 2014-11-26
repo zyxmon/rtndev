@@ -54,7 +54,7 @@ endef
 
 define Package/accel-ppp/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/accel-cmd $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt$(PKG_INSTALL_DIR)/opt/bin/accel-cmd $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/sbin
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/accel-pppd $(1)/opt/sbin/
 	$(INSTALL_DIR) $(1)/opt/lib/accel-ppp

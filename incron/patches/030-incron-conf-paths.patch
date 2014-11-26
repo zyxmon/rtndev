@@ -5,7 +5,7 @@
  # Meaning:     system table directory
  # Description: This directory is examined by incrond for system table files.
 -# Default:     /etc/incron.d
-+# Default:     /opt/etc/incron.d
++# Default:     /Apps/opt/etc/incron.d
  #
  # Example:
  # system_table_dir = /var/spool/incron.systables
@@ -14,7 +14,7 @@
  # Meaning:     user table directory
  # Description: This directory is examined by incrond for user table files.
 -# Default:     /var/spool/incron
-+# Default:     /opt/var/spool/incron
++# Default:     /Apps/opt/var/spool/incron
  #
  # Example:
  # user_table_dir = /var/spool/incron.usertables
@@ -23,7 +23,7 @@
  # Meaning:     allowed users list file
  # Description: This file contains users allowed to use incron.
 -# Default:     /etc/incron.allow
-+# Default:     /opt/etc/incron.allow
++# Default:     /Apps/opt/etc/incron.allow
  #
  # Example:
  # allowed_users = /etc/incron/allow
@@ -32,7 +32,7 @@
  # Meaning:     denied users list file
  # Description: This file contains users denied to use incron.
 -# Default:     /etc/incron.deny
-+# Default:     /opt/etc/incron.deny
++# Default:     /Apps/opt/etc/incron.deny
  #
  # Example:
  # denied_users = /etc/incron/deny
@@ -41,7 +41,7 @@
  # Description: This directory is used for creating a lock avoiding to run
  #              multiple instances of incrond.
 -# Default:     /var/run
-+# Default:     /opt/var/run
++# Default:     /Apps/opt/var/run
  #
  # Example:
  # lockfile_dir = /tmp

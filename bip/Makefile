@@ -41,9 +41,9 @@ endef
 
 define Package/bip/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/{bip,bipmkpw} $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/{bip,bipmkpw} $(1)/opt/bin
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
-	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/opt/share/doc/bip/examples/bip.conf $(1)/opt/etc
+	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/Apps/opt/share/doc/bip/examples/bip.conf $(1)/opt/etc
 	$(INSTALL_BIN) ./files/S99bip $(1)/opt/etc/init.d
 endef
 

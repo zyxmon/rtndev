@@ -37,7 +37,7 @@ define Package/cadaver/description
 endef
 
 CONFIGURE_ARGS += \
-	--prefix=/opt \
+	--prefix=/Apps/opt \
 	--with-libs=$(STAGING_DIR)/opt \
 	--with-ssl=openssl \
 	--disable-nls \
@@ -46,7 +46,7 @@ TARGET_CPPFLAGS += -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE
 
 define Package/cadaver/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/cadaver $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/cadaver $(1)/opt/bin
 endef
 
 $(eval $(call BuildPackage,cadaver))

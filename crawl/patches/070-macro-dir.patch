@@ -5,7 +5,7 @@
      {
  #ifdef UNIX
 -        macro_dir = _user_home_subpath(".crawl");
-+        macro_dir = "/opt/var/crawl/macro";
++        macro_dir = "/Apps/opt/var/crawl/macro";
  #else
          macro_dir = "settings/";
  #endif

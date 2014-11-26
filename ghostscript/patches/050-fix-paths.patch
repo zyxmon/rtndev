@@ -8,10 +8,10 @@
 -PSFILTERPATH=/usr/local/lib/ghostscript
 -LOCALPATH=/usr/local/bin
 -X11HOME=/usr/X11R6
-+PBMPLUSPATH=/opt/bin
-+PSFILTERPATH=/opt/lib/ghostscript
-+LOCALPATH=/opt/bin
-+X11HOME=/opt/usr/X11R6
++PBMPLUSPATH=/Apps/opt/bin
++PSFILTERPATH=/Apps/opt/lib/ghostscript
++LOCALPATH=/Apps/opt/bin
++X11HOME=/Apps/opt/usr/X11R6
  
  PATH=/bin:/usr/bin:/usr/ucb:/usr/etc
  PATH=${PATH}\:${LOCALPATH}\:${PBMPLUSPATH}\:${PSFILTERPATH}
@@ -34,11 +34,11 @@
 -else
 -  GSDIR=$GSPATH
 -fi
-+GSDIR=/opt/lib/ghostscript
++GSDIR=/Apps/opt/lib/ghostscript
  
  GSFILTERDIR=$GSDIR/filt
 -SPOOLDIR=/var/spool
-+SPOOLDIR=/opt/var/spool
++SPOOLDIR=/Apps/opt/var/spool
  GSIF=unix-lpr.sh
  PCAP=printcap.insert
  

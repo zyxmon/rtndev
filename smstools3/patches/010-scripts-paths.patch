@@ -20,7 +20,7 @@
    echo "To: $destination"
  
 -  TMPFILE=`mktemp /tmp/smsd_XXXXXX`
-+  TMPFILE=`mktemp /opt/tmp/smsd_XXXXXX`
++  TMPFILE=`mktemp /Apps/opt/tmp/smsd_XXXXXX`
  
    $ECHO "To: $destination" >> $TMPFILE
    [ -n "$ALPHABET" ] && $ECHO "$ALPHABET" >> $TMPFILE
@@ -29,7 +29,7 @@
    fi
  
 -  FILE=`mktemp /var/spool/sms/outgoing/send_XXXXXX`
-+  FILE=`mktemp /opt/var/spool/sms/outgoing/send_XXXXXX`
++  FILE=`mktemp /Apps/opt/var/spool/sms/outgoing/send_XXXXXX`
    mv $TMPFILE $FILE
  done
 --- a/scripts/sms2html	2006-02-04 22:52:06.000000000 +0300
@@ -63,7 +63,7 @@
  
  devices = GSM1
 -logfile = /var/log/smsd.log
-+logfile = /opt/var/log/smsd.log
++logfile = /Apps/opt/var/log/smsd.log
  loglevel = 7
  
  [GSM1]

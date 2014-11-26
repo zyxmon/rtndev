@@ -37,11 +37,11 @@ TARGET_LDFLAGS += \
 	-lstdc++ \
 
 MAKE_VARS += \
-	PREFIX="$(PKG_INSTALL_DIR)/opt" \
+	PREFIX="$(PKG_INSTALL_DIR)/Apps/opt" \
 
 define Package/pbzip2/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/pbzip2 $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/pbzip2 $(1)/opt/bin/
 	$(LN) -s /opt/bin/pbzip2 $(1)/opt/bin/pbunzip2
 	$(LN) -s /opt/bin/pbzip2 $(1)/opt/bin/pbzcat
 endef

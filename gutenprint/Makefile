@@ -52,10 +52,10 @@ CONFIGURE_ARGS += \
 	--disable-translated-cups-ppds \
 	--disable-globalized-cups-ppds \
 	--enable-simplified-cups-ppds \
-	--bindir=/opt/bin \
-	--sbindir=/opt/bin \
-	--prefix=/opt \
-	--exec-prefix=/opt
+	--bindir=/Apps/opt/bin \
+	--sbindir=/Apps/opt/bin \
+	--prefix=/Apps/opt \
+	--exec-prefix=/Apps/opt
 
 define Build/Compile
 	# Replace the cross-compiled "extract-string" by a shell-script that
@@ -71,16 +71,16 @@ endef
 define Package/gutenprint/install
 	$(INSTALL_DIR) $(1)/opt/sbin $(1)/opt/bin
 	# XXX Do not install cups-genppdupdate, as it requires Perl + some perl libs
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/cups-genppd.[0-9]*.[0-9]* $(1)/opt/sbin/
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/cups-calibrate $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/cups-genppd.[0-9]*.[0-9]* $(1)/opt/sbin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/cups-calibrate $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/lib/cups/{driver,filter}
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/lib/cups/driver/gutenprint.* $(1)/opt/lib/cups/driver
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/lib/cups/filter/* $(1)/opt/lib/cups/filter
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libgutenprint.so* $(1)/opt/lib
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/lib/cups/driver/gutenprint.* $(1)/opt/lib/cups/driver
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/lib/cups/filter/* $(1)/opt/lib/cups/filter
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libgutenprint.so* $(1)/opt/lib
 	$(INSTALL_DIR) $(1)/opt/share/cups/mime
-	$(CP) $(PKG_INSTALL_DIR)/opt/etc/cups/command.types $(1)/opt/share/cups/mime
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/etc/cups/command.types $(1)/opt/share/cups/mime
 	$(INSTALL_DIR) $(1)/opt/share/gutenprint
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/gutenprint/[0-9]*.[0-9]* $(1)/opt/share/gutenprint
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/gutenprint/[0-9]*.[0-9]* $(1)/opt/share/gutenprint
 endef
 
 define Host/Compile

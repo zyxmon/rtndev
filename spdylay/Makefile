@@ -37,20 +37,20 @@ endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include/spdylay
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/spdylay/*.h \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/spdylay/*.h \
 		$(1)/opt/include/spdylay
 	$(INSTALL_DIR) $(1)/opt/lib/pkgconfig
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libspdylay.{la,a,so*} \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libspdylay.{la,a,so*} \
 		$(1)/opt/lib/
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/opt/lib/pkgconfig/libspdylay.pc \
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/Apps/opt/lib/pkgconfig/libspdylay.pc \
 		$(1)/opt/lib/pkgconfig/
 endef
 
 define Package/spdylay/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/{shrpx,spdycat,spdyd} $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/{shrpx,spdycat,spdyd} $(1)/opt/bin
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libspdylay.so* $(1)/opt/lib
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libspdylay.so* $(1)/opt/lib
 endef
 
 $(eval $(call BuildPackage,spdylay))

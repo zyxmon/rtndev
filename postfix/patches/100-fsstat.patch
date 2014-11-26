@@ -5,7 +5,7 @@
  #define BLOCKS(x)	((x) / fsbuf.block_size)
  
 -    fsspace(".", &fsbuf);
-+    fsspace("/opt", &fsbuf);
++    fsspace("/Apps/opt", &fsbuf);
      if (msg_verbose)
  	msg_info("%s: blocks %lu avail %lu min_free %lu msg_size_limit %lu",
  		 myname,

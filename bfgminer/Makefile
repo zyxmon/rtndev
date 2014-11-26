@@ -88,10 +88,10 @@ endef
 
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/opt/bin $(1)/opt/lib
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/$(PKG_NAME) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/$(PKG_NAME)-rpc $(1)/opt/bin
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libblkmaker*.so* $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libbase58.so* $(1)/opt/lib
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/$(PKG_NAME) $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/$(PKG_NAME)-rpc $(1)/opt/bin
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libblkmaker*.so* $(1)/opt/lib
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libbase58.so* $(1)/opt/lib
 endef
 
 ALL_$(PKG_NAME)_PACKAGES += $(PKG_NAME)

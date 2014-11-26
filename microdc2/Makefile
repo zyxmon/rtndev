@@ -50,7 +50,7 @@ endef
 
 define Package/microdc2/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/{microdc2,tthsum} $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/{microdc2,tthsum} $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/share/microdc2
 	$(INSTALL_CONF) ./files/microdc2.conf $(1)/opt/share/microdc2/config
 endef

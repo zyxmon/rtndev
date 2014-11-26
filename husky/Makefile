@@ -35,16 +35,16 @@ define Package/husky/description
 endef
 
 TARGET_CFLAGS += \
-	-I$(PKG_INSTALL_DIR)/opt/include
+	-I$(PKG_INSTALL_DIR)/Apps/opt/include
 
 TARGET_LDFLAGS += \
-	-L$(PKG_INSTALL_DIR)/opt/lib \
-	-Wl,-rpath-link=$(PKG_INSTALL_DIR)/opt/lib
+	-L$(PKG_INSTALL_DIR)/Apps/opt/lib \
+	-Wl,-rpath-link=$(PKG_INSTALL_DIR)/Apps/opt/lib
 
 define Build/Configure
 	$(CP) ./files/Makefile $(PKG_BUILD_DIR)
 	$(CP) $(PKG_BUILD_DIR)/huskybse/huskymak.cfg $(PKG_BUILD_DIR)
-	$(SED) 's|^\(PREFIX\)=.*|\1=\$(PKG_INSTALL_DIR)/opt|g' \
+	$(SED) 's|^\(PREFIX\)=.*|\1=\$(PKG_INSTALL_DIR)/Apps/opt|g' \
 		$(PKG_BUILD_DIR)/huskymak.cfg
 	$(SED) 's|^\(OPTLFLAGS\)=.*|\1=-s $(TARGET_LDFLAGS)|g' \
 		$(PKG_BUILD_DIR)/huskymak.cfg
@@ -52,7 +52,7 @@ endef
 
 define Package/husky/install
 	$(INSTALL_DIR) $(1)/opt/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/* $(1)/opt/sbin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/* $(1)/opt/sbin
 endef
 
 $(eval $(call BuildPackage,husky))

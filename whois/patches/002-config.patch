@@ -18,6 +18,6 @@
 -#define CONFIG_FILE "/etc/whois.conf"
 -*/
 +
-+#define CONFIG_FILE "/opt/etc/whois.conf"
++#define CONFIG_FILE "/Apps/opt/etc/whois.conf"
 +
  

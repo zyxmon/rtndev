@@ -38,9 +38,9 @@ endef
 
 define Package/sitecopy/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/sitecopy $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/sitecopy $(1)/opt/bin
 	$(INSTALL_DIR) $(1)/opt/share/sitecopy
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/opt/share/sitecopy/{changes.awk,examplerc} $(1)/opt/share/sitecopy
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/Apps/opt/share/sitecopy/{changes.awk,examplerc} $(1)/opt/share/sitecopy
 endef
 
 $(eval $(call BuildPackage,sitecopy))

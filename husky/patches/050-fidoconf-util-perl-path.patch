@@ -2,7 +2,7 @@
 +++ b/fidoconf/util/sq2fc.pl
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl
-+#!/opt/bin/perl
++#!/Apps/opt/bin/perl
  
  # Convert SQUISH.CFG to echoareas's part of fidoconfig
  # REad SQUISH.CFG and SQAFIX.CFG from current directory
@@ -10,7 +10,7 @@
 +++ b/fidoconf/util/fconf2areasbbs.pl	2012-04-07 23:38:08.823991159 +0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl
-+#!/opt/bin/perl
++#!/Apps/opt/bin/perl
  # $Id: fconf2areasbbs.pl,v 1.2 2011/02/21 23:16:07 stas_degteff Exp $
  ###############################################################################
  # fconf config file to areas.bbs converter
@@ -18,7 +18,7 @@
 +++ b/fidoconf/util/fconf2na.pl	2012-04-07 23:39:30.022964378 +0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl
-+#!/opt/bin/perl
++#!/Apps/opt/bin/perl
  #
  # This script parses HPT echoareas file and produces export areatags and
  # descriptions to FIDONET.NA-compatible file.
@@ -26,7 +26,7 @@
 +++ b/fidoconf/util/fconf2dir.pl	2012-04-07 23:39:11.863196304 +0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl
-+#!/opt/bin/perl
++#!/Apps/opt/bin/perl
  #
  # $Id: fconf2dir.pl,v 1.1 2003/03/21 08:02:32 sfpavel Exp $
  #
@@ -40,9 +40,9 @@
 -      FIDOCONFIG="/etc/fido/config"
 -   elif [ -f /usr/local/etc/fido/config ]; then
 -      FIDOCONFIG="/usr/local/etc/fido/config"
-+   elif [ -f /opt/etc/fido/config ]; then
-+      FIDOCONFIG="/opt/etc/fido/config"
-+   elif [ -f /opt/usr/etc/fido/config ]; then
++   elif [ -f /Apps/opt/etc/fido/config ]; then
++      FIDOCONFIG="/Apps/opt/etc/fido/config"
++   elif [ -f /Apps/opt/usr/etc/fido/config ]; then
 +      FIDOCONFIG="/opr/usr/etc/fido/config"
     else
        echo "Can't found config. Set the FIDOCONFIG enviroment variable."

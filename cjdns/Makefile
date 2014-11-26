@@ -50,7 +50,7 @@ CMAKE_OPTIONS += \
 
 define Package/cjdns/install
 	$(INSTALL_DIR) $(1)/opt/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/cjdroute2 $(1)/opt/sbin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/cjdroute2 $(1)/opt/sbin/
 endef
 
 $(eval $(call BuildPackage,cjdns))

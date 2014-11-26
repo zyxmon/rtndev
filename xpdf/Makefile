@@ -58,11 +58,11 @@ endef
 define Package/xpdf/install
 	$(INSTALL_DIR) $(1)/opt/bin
 	$(INSTALL_BIN) \
-	    $(PKG_INSTALL_DIR)/opt/bin/pdf{detach,fonts,images,info,tops,totext} \
+	    $(PKG_INSTALL_DIR)/Apps/opt/bin/pdf{detach,fonts,images,info,tops,totext} \
 	    $(PKG_BUILD_DIR)/xpdf/pdftohtml \
 	    $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/etc
-	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/opt/etc/xpdfrc $(1)/opt/etc/
+	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/Apps/opt/etc/xpdfrc $(1)/opt/etc/
 endef
 
 $(eval $(call BuildPackage,xpdf))

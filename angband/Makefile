@@ -44,14 +44,14 @@ CONFIGURE_ARGS += \
 
 define Package/angband/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/angband $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/angband $(1)/opt/bin
 	$(INSTALL_DIR) $(1)/opt/etc/angband/{edit,pref}
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/opt/etc/angband/edit/*.txt $(1)/opt/etc/angband/edit
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/opt/etc/angband/pref/*.prf $(1)/opt/etc/angband/pref
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/Apps/opt/etc/angband/edit/*.txt $(1)/opt/etc/angband/edit
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/Apps/opt/etc/angband/pref/*.prf $(1)/opt/etc/angband/pref
 	$(INSTALL_DIR) $(1)/opt/share/angband/{file,help,info}
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/opt/share/angband/file/*.txt $(1)/opt/share/angband/file
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/opt/share/angband/help/*.{txt,hlp} $(1)/opt/share/angband/help
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/opt/share/angband/info/*.txt $(1)/opt/share/angband/info
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/Apps/opt/share/angband/file/*.txt $(1)/opt/share/angband/file
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/Apps/opt/share/angband/help/*.{txt,hlp} $(1)/opt/share/angband/help
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/Apps/opt/share/angband/info/*.txt $(1)/opt/share/angband/info
 endef
 
 $(eval $(call BuildPackage,angband))

@@ -41,7 +41,7 @@ endef
 
 define Package/loadwatch/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/{loadwatch,lw-ctl} $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/{loadwatch,lw-ctl} $(1)/opt/bin/
 endef
 
 $(eval $(call BuildPackage,loadwatch))

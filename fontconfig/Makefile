@@ -41,13 +41,13 @@ CONFIGURE_ARGS += \
 
 define Package/fontconfig/install
 	$(INSTALL_DIR) $(1)/opt/etc/fonts/conf.d $(1)/opt/var/cache/fontconfig
-	$(CP) $(PKG_INSTALL_DIR)/opt/etc/fonts/fonts.conf $(1)/opt/etc/fonts
-	$(CP) $(PKG_INSTALL_DIR)/opt/etc/fonts/conf.d/* $(1)/opt/etc/fonts/conf.d
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/etc/fonts/fonts.conf $(1)/opt/etc/fonts
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/etc/fonts/conf.d/* $(1)/opt/etc/fonts/conf.d
 	$(INSTALL_DIR) $(1)/opt/{bin,lib}
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/fc-* $(1)/opt/bin/
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libfontconfig.so* $(1)/opt/lib/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/fc-* $(1)/opt/bin/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libfontconfig.so* $(1)/opt/lib/
 	$(INSTALL_DIR) $(1)/opt/share/fontconfig/conf.avail
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/fontconfig/conf.avail/* $(1)/opt/share/fontconfig/conf.avail
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/fontconfig/conf.avail/* $(1)/opt/share/fontconfig/conf.avail
 endef
 
 define Package/fontconfig/postinst
@@ -57,9 +57,9 @@ endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include/fontconfig
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/fontconfig/*.h $(1)/opt/include/fontconfig/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/fontconfig/*.h $(1)/opt/include/fontconfig/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/* $(1)/opt/lib
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/* $(1)/opt/lib
 endef
 
 $(eval $(call BuildPackage,fontconfig))

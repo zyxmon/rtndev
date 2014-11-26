@@ -5,7 +5,7 @@
  endif
  
 -CDEFS=-D$(OSTYPE) $(ADDCDEFS) -DCFGDIR=\"$(CFGDIR)\"
-+CDEFS=-D$(OSTYPE) $(ADDCDEFS) -DCFGDIR=\"/opt/etc/fido\"
++CDEFS=-D$(OSTYPE) $(ADDCDEFS) -DCFGDIR=\"/Apps/opt/etc/fido\"
  ifdef CFGNAME
  CDEFS+= -DCFGNAME=\"$(CFGNAME)\"
  endif

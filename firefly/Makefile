@@ -68,16 +68,16 @@ endef
 
 define Package/firefly/install
 	$(INSTALL_DIR) $(1)/opt/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/mt-daapd $(1)/opt/sbin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/mt-daapd $(1)/opt/sbin
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/wavstreamer $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/wavstreamer $(1)/opt/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/contrib/mt-daapd-ssc.sh $(1)/opt/bin
 	$(INSTALL_DIR) $(1)/opt/lib/mt-daapd/plugins
 	$(INSTALL_BIN) \
-		$(PKG_INSTALL_DIR)/opt/lib/mt-daapd/plugins/{out-daap,rsp,ssc-ffmpeg,ssc-script}.so \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/mt-daapd/plugins/{out-daap,rsp,ssc-ffmpeg,ssc-script}.so \
 		$(1)/opt/lib/mt-daapd/plugins
 	$(INSTALL_DIR) $(1)/opt/share/mt-daapd/admin-root
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/mt-daapd/admin-root/* $(1)/opt/share/mt-daapd/admin-root
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/mt-daapd/admin-root/* $(1)/opt/share/mt-daapd/admin-root
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
 	$(INSTALL_CONF) $(PKG_BUILD_DIR)/contrib/mt-daapd.conf $(1)/opt/etc
 	$(INSTALL_BIN) ./files/S43firefly $(1)/opt/etc/init.d

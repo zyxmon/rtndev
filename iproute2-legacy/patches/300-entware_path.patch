@@ -5,7 +5,7 @@
  {
  	rtnl_rtprot_init = 1;
 -	rtnl_tab_initialize("/etc/iproute2/rt_protos",
-+	rtnl_tab_initialize("/opt/etc/iproute2/rt_protos",
++	rtnl_tab_initialize("/Apps/opt/etc/iproute2/rt_protos",
  			    rtnl_rtprot_tab, 256);
  }
  
@@ -14,7 +14,7 @@
  	rtnl_rtscope_tab[253] = "link";
  	rtnl_rtscope_tab[200] = "site";
 -	rtnl_tab_initialize("/etc/iproute2/rt_scopes",
-+	rtnl_tab_initialize("/opt/etc/iproute2/rt_scopes",
++	rtnl_tab_initialize("/Apps/opt/etc/iproute2/rt_scopes",
  			    rtnl_rtscope_tab, 256);
  }
  
@@ -23,7 +23,7 @@
  {
  	rtnl_rtrealm_init = 1;
 -	rtnl_tab_initialize("/etc/iproute2/rt_realms",
-+	rtnl_tab_initialize("/opt/etc/iproute2/rt_realms",
++	rtnl_tab_initialize("/Apps/opt/etc/iproute2/rt_realms",
  			    rtnl_rtrealm_tab, 256);
  }
  
@@ -32,7 +32,7 @@
  {
  	rtnl_rttable_init = 1;
 -	rtnl_hash_initialize("/etc/iproute2/rt_tables",
-+	rtnl_hash_initialize("/opt/etc/iproute2/rt_tables",
++	rtnl_hash_initialize("/Apps/opt/etc/iproute2/rt_tables",
  			     rtnl_rttable_hash, 256);
  }
  
@@ -41,7 +41,7 @@
  {
  	rtnl_rtdsfield_init = 1;
 -	rtnl_tab_initialize("/etc/iproute2/rt_dsfield",
-+	rtnl_tab_initialize("/opt/etc/iproute2/rt_dsfield",
++	rtnl_tab_initialize("/Apps/opt/etc/iproute2/rt_dsfield",
  			    rtnl_rtdsfield_tab, 256);
  }
  
@@ -50,7 +50,7 @@
  {
  	rtnl_group_init = 1;
 -	rtnl_hash_initialize("/etc/iproute2/group",
-+	rtnl_hash_initialize("/opt/etc/iproute2/group",
++	rtnl_hash_initialize("/Apps/opt/etc/iproute2/group",
  			     rtnl_group_hash, 256);
  }
  
@@ -61,7 +61,7 @@
  #include "m_ematch.h"
  
 -#define EMATCH_MAP "/etc/iproute2/ematch_map"
-+#define EMATCH_MAP "/opt/etc/iproute2/ematch_map"
++#define EMATCH_MAP "/Apps/opt/etc/iproute2/ematch_map"
  
  static struct ematch_util *ematch_list;
  

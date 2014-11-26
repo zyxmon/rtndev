@@ -63,12 +63,12 @@ BINARIES = \
 define Package/xawtv/install
 	$(INSTALL_DIR) $(1)/opt/bin
 	$(INSTALL_BIN) \
-	    $(foreach bin,$(BINARIES),$(PKG_INSTALL_DIR)/opt/bin/$(bin)) \
+	    $(foreach bin,$(BINARIES),$(PKG_INSTALL_DIR)/Apps/opt/bin/$(bin)) \
 	    $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/lib/xawtv
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/lib/xawtv/* $(1)/opt/lib/xawtv/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/lib/xawtv/* $(1)/opt/lib/xawtv/
 	$(INSTALL_DIR) $(1)/opt/share/xawtv
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/opt/share/xawtv/* $(1)/opt/share/xawtv/
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/Apps/opt/share/xawtv/* $(1)/opt/share/xawtv/
 endef
 
 $(eval $(call BuildPackage,xawtv))

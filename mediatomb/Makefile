@@ -44,7 +44,7 @@ define Package/mediatomb/conffiles
 endef
 
 CONFIGURE_ARGS += \
-	--prefix=/opt \
+	--prefix=/Apps/opt \
 	--enable-pthread-lib \
 	--enable-inotify \
 	--enable-db-autocreate \
@@ -83,7 +83,7 @@ endef
 
 define Package/mediatomb/install
 	$(INSTALL_DIR) $(1)/opt/etc/mediatomb $(1)/opt/bin $(1)/opt/share $(1)/opt/var/mediatomb
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/mediatomb $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/mediatomb $(1)/opt/bin/
 	$(CP)  $(PKG_INSTALL_DIR)/opt/share/* $(1)/opt/share/
 	$(INSTALL_DATA) ./files/config.xml $(1)/opt/etc/mediatomb/
 	$(INSTALL_DIR) $(1)/opt/etc/init.d

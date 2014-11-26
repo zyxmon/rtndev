@@ -69,34 +69,34 @@ define Package/duo_unix/description
 endef
 
 CONFIGURE_ARGS += \
-	--with-pam=/opt/lib/security \
+	--with-pam=/Apps/opt/lib/security \
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/duo.h $(1)/opt/include
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/duo.h $(1)/opt/include
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libduo.{a,la,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libduo.{a,la,so*} $(1)/opt/lib/
 	$(INSTALL_DIR) $(1)/opt/lib/pkgconfig
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/pkgconfig/libduo.pc $(1)/opt/lib/pkgconfig
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/pkgconfig/libduo.pc $(1)/opt/lib/pkgconfig
 endef
 
 define Package/libduo/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libduo.so* $(1)/opt/lib
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libduo.so* $(1)/opt/lib
 endef
 
 define Package/pam_duo/install
 	$(INSTALL_DIR) $(1)/opt/lib/security
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/lib/security/pam_duo.so $(1)/opt/lib/security
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/lib/security/pam_duo.so $(1)/opt/lib/security
 	$(INSTALL_DIR) $(1)/opt/etc
-	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/opt/etc/pam_duo.conf $(1)/opt/etc
+	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/Apps/opt/etc/pam_duo.conf $(1)/opt/etc
 endef
 
 define Package/duo_unix/install
 	$(INSTALL_DIR) $(1)/opt/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/login_duo $(1)/opt/sbin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/login_duo $(1)/opt/sbin
 	$(INSTALL_DIR) $(1)/opt/etc
-	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/opt/etc/login_duo.conf $(1)/opt/etc
+	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/Apps/opt/etc/login_duo.conf $(1)/opt/etc
 endef
 
 $(eval $(call BuildPackage,libduo))

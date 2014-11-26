@@ -13,9 +13,9 @@
 -  if (verbose) puts("/usr/share/phear/data/ ..");
 -  if (!chk_file("/usr/share/phear/data/", "spgraf"))
 -    return "/usr/share/phear/data/";
-+  if (verbose) puts("/opt/share/phear/data/ ..");
-+  if (!chk_file("/opt/share/phear/data/", "spgraf"))
-+    return "/opt/share/phear/data/";
++  if (verbose) puts("/Apps/opt/share/phear/data/ ..");
++  if (!chk_file("/Apps/opt/share/phear/data/", "spgraf"))
++    return "/Apps/opt/share/phear/data/";
    if (verbose) puts("Data not found");
    return NULL;
  }

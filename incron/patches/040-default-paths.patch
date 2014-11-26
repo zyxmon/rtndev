@@ -5,7 +5,7 @@
  
  
 -#define INCRON_CFG_DEFAULT "/etc/incron.conf"
-+#define INCRON_CFG_DEFAULT "/opt/etc/incron.conf"
++#define INCRON_CFG_DEFAULT "/Apps/opt/etc/incron.conf"
  
  
  typedef std::map<std::string, std::string> CFG_MAP;
@@ -18,11 +18,11 @@
 -  m_defaults.insert(CFG_MAP::value_type("allowed_users", "/etc/incron.allow"));
 -  m_defaults.insert(CFG_MAP::value_type("denied_users", "/etc/incron.deny"));
 -  m_defaults.insert(CFG_MAP::value_type("lockfile_dir", "/var/run"));
-+  m_defaults.insert(CFG_MAP::value_type("system_table_dir", "/opt/etc/incron.d"));
-+  m_defaults.insert(CFG_MAP::value_type("user_table_dir", "/opt/var/spool/incron"));
-+  m_defaults.insert(CFG_MAP::value_type("allowed_users", "/opt/etc/incron.allow"));
-+  m_defaults.insert(CFG_MAP::value_type("denied_users", "/opt/etc/incron.deny"));
-+  m_defaults.insert(CFG_MAP::value_type("lockfile_dir", "/opt/var/run"));
++  m_defaults.insert(CFG_MAP::value_type("system_table_dir", "/Apps/opt/etc/incron.d"));
++  m_defaults.insert(CFG_MAP::value_type("user_table_dir", "/Apps/opt/var/spool/incron"));
++  m_defaults.insert(CFG_MAP::value_type("allowed_users", "/Apps/opt/etc/incron.allow"));
++  m_defaults.insert(CFG_MAP::value_type("denied_users", "/Apps/opt/etc/incron.deny"));
++  m_defaults.insert(CFG_MAP::value_type("lockfile_dir", "/Apps/opt/var/run"));
    m_defaults.insert(CFG_MAP::value_type("lockfile_name", "incrond"));
 -  m_defaults.insert(CFG_MAP::value_type("editor", ""));
 +  m_defaults.insert(CFG_MAP::value_type("editor", "/bin/vi"));

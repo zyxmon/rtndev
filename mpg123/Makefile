@@ -58,23 +58,23 @@ CONFIGURE_ARGS += \
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/mpg123.h $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/mpg123.h $(1)/opt/include/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libmpg123.{a,la,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libmpg123.{a,la,so*} $(1)/opt/lib/
 	$(INSTALL_DIR) $(1)/opt/lib/pkgconfig
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/pkgconfig/libmpg123.pc $(1)/opt/lib/pkgcon
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/pkgconfig/libmpg123.pc $(1)/opt/lib/pkgcon
 endef
 
 define Package/libmpg123/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libmpg123.so* $(1)/opt/lib
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libmpg123.so* $(1)/opt/lib
 endef
 
 define Package/mpg123/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/mpg123{,-id3dump,-strip} \
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/mpg123{,-id3dump,-strip} \
 	    $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/out123 \
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/out123 \
 	    $(1)/opt/bin
 endef
 

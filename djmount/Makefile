@@ -46,7 +46,7 @@ CONFIGURE_ARGS += \
 
 define Package/djmount/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/djmount $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/djmount $(1)/opt/bin/
 endef
 
 $(eval $(call BuildPackage,djmount))

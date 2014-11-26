@@ -46,16 +46,16 @@ endef
 
 define Package/findutils/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/{find,xargs} \
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/{find,xargs} \
 	    $(1)/opt/bin/
 endef
 
 define Package/findutils-locate/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/{locate,updatedb} \
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/{locate,updatedb} \
 	    $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/lib/{bigram,code,frcode} \
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/lib/{bigram,code,frcode} \
 	    $(1)/opt/lib/
 endef
 

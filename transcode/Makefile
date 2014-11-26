@@ -56,9 +56,9 @@ CONFIGURE_ARGS += \
 
 define Package/transcode/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/* $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/* $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/lib/transcode
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/transcode/{*.so,xvid4.cfg,filter_list.awk,parse_csv.awk} \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/transcode/{*.so,xvid4.cfg,filter_list.awk,parse_csv.awk} \
 			$(1)/opt/lib/transcode
 endef
 

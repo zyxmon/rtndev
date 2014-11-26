@@ -36,13 +36,13 @@ CONFIGURE_ARGS += \
 	--with-ncurses-include-dir=$(STAGING_DIR)/opt/include \
 	--with-libreadline-prefix=$(STAGING_DIR)/opt \
 	--program-prefix=inetutils- \
-	--libexecdir=/opt/libexec
+	--libexecdir=/Apps/opt/libexec
 
 define Package/inetutils/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/inetutils-* $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/inetutils-* $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/libexec
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/libexec/inetutils-* $(1)/opt/libexec/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/libexec/inetutils-* $(1)/opt/libexec/
 endef
 
 $(eval $(call BuildPackage,inetutils))

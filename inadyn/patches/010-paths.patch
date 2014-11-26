@@ -6,8 +6,8 @@
  /* Test values */
 -#define DEFAULT_CONFIG_FILE	"/etc/inadyn.conf"
 -#define RUNTIME_DATA_DIR	"/var/run/inadyn"
-+#define DEFAULT_CONFIG_FILE	"/opt/etc/inadyn.conf"
-+#define RUNTIME_DATA_DIR	"/opt/var/run"
++#define DEFAULT_CONFIG_FILE	"/Apps/opt/etc/inadyn.conf"
++#define RUNTIME_DATA_DIR	"/Apps/opt/var/run"
  #define DEFAULT_PIDFILE		RUNTIME_DATA_DIR "/inadyn.pid"
  
  #define DYNDNS_MY_IP_SERVER	"checkip.dyndns.org"

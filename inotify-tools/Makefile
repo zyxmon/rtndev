@@ -35,9 +35,9 @@ endef
 
 define Package/inotify-tools/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/inotify{wait,watch} $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/inotify{wait,watch} $(1)/opt/bin
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libinotifytools.so* $(1)/opt/lib
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libinotifytools.so* $(1)/opt/lib
 endef
 
 $(eval $(call BuildPackage,inotify-tools))

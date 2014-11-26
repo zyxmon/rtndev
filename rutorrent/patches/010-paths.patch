@@ -5,7 +5,7 @@
  
  	$do_diagnostic = true;
 -	$log_file = '/tmp/errors.log';		// path to log file (comment or leave blank to disable logging)
-+	$log_file = '/opt/tmp/errors.log';		// path to log file (comment or leave blank to disable logging)
++	$log_file = '/Apps/opt/tmp/errors.log';		// path to log file (comment or leave blank to disable logging)
  
  	$saveUploadedTorrents = true;		// Save uploaded torrents to profile/torrents directory or not
  	$overwriteUploadedTorrents = false;     // Overwrite existing uploaded torrents in profile/torrents directory or make unique name
@@ -25,7 +25,7 @@
 -	// $scgi_port = 0;
 -	// $scgi_host = "unix:///tmp/rpc.socket";
 +	$scgi_port = 0;
-+	$scgi_host = "unix:///opt/var/rpc.socket";
++	$scgi_host = "unix:///Apps/opt/var/rpc.socket";
  
  	$XMLRPCMountPoint = "/RPC2";		// DO NOT DELETE THIS LINE!!! DO NOT COMMENT THIS LINE!!!
  

@@ -5,7 +5,7 @@
  
  # Uncomment to change the default.  (Only used in Unix-like systems.)
 -#HISCORE_FILENAME = /var/games/vitetris-hiscores
-+HISCORE_FILENAME = /opt/var/vitetris-hiscores
++HISCORE_FILENAME = /Apps/opt/var/vitetris-hiscores
  
  INSTALL = install -oroot -groot
  

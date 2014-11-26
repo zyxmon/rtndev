@@ -36,7 +36,7 @@ IPSET_MAKEOPTS:= -C $(PKG_BUILD_DIR) \
 	LDFLAGS="-rdynamic" \
 	NO_EXTRA_WARN_FLAGS=yes \
 	KERNEL_DIR="$(LINUX_DIR)" \
-	PREFIX=/opt \
+	PREFIX=/Apps/opt \
 
 define Build/Compile
 	mkdir -p $(PKG_INSTALL_DIR)

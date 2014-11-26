@@ -5,7 +5,7 @@
  get_package_file(const char *name, char **outname)
  {
 -    *outname = xasprintf("%s/.%s/%s", getenv_default("HOME", ""), PACKAGE, name);
-+    *outname = xasprintf("%s/%s/%s", "/opt/share", PACKAGE, name);
++    *outname = xasprintf("%s/%s/%s", "/Apps/opt/share", PACKAGE, name);
      return true;
  }
  
@@ -16,7 +16,7 @@
          return tmpdir;
  
 -    tmpdir = "/tmp";
-+    tmpdir = "/opt/tmp";
++    tmpdir = "/Apps/opt/tmp";
      if (direxists(tmpdir))
          return tmpdir;
  

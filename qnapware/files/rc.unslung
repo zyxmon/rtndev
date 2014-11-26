@@ -16,7 +16,7 @@ fi
 
 [ $ACTION = stop -o $ACTION = restart -o $ACTION = kill ] && ORDER="-r"
 
-for i in $(/opt/bin/find /opt/etc/init.d/ -perm '-u+x' -name 'S*' | sort $ORDER ) ;
+for i in $(/Apps/opt/bin/find /Apps/opt/etc/init.d/ -perm '-u+x' -name 'S*' | sort $ORDER ) ;
 do
     case "$i" in
         S* | *.sh )

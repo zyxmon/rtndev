@@ -3,5 +3,5 @@
 @@ -196,3 +196,3 @@
  
 -logfile = /var/log/mt-daapd.log
-+logfile = /opt/var/log/mt-daapd.log
++logfile = /Apps/opt/var/log/mt-daapd.log
  

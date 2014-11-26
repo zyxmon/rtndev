@@ -5,7 +5,7 @@
  
  # Where to install the data file
 -LIBDIR = /usr/games/lib
-+LIBDIR = /opt/share/zork
++LIBDIR = /Apps/opt/share/zork
  
  # The dungeon program provides a ``more'' facility which tries to
  # figure out how many rows the terminal has.  Several mechanisms are

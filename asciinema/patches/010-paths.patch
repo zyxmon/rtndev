@@ -5,7 +5,7 @@
  
  
 -DEFAULT_CONFIG_FILE_PATH = "~/.asciinema/config"
-+DEFAULT_CONFIG_FILE_PATH = "/opt/etc/asciinema/config"
++DEFAULT_CONFIG_FILE_PATH = "/Apps/opt/etc/asciinema/config"
  DEFAULT_API_URL = 'http://asciinema.org'
  
  class Config:

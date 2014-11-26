@@ -49,10 +49,10 @@ TARGET_LDFLAGS += \
 
 define Package/bochs/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/{bochs,bxcommit,bximage} \
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/{bochs,bxcommit,bximage} \
 		$(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/share/bochs
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/opt/share/bochs/{BIOS,VGABIOS}-* \
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/Apps/opt/share/bochs/{BIOS,VGABIOS}-* \
 		$(1)/opt/share/bochs
 endef
 

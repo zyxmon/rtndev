@@ -38,12 +38,12 @@ endef
 
 define Package/afpfs-ng/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/afp{cmd,fs,fsd,getstatus} \
-	    $(PKG_INSTALL_DIR)/opt/bin/mount_afp \
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/afp{cmd,fs,fsd,getstatus} \
+	    $(PKG_INSTALL_DIR)/Apps/opt/bin/mount_afp \
 	    $(1)/opt/bin/
 	$(LN) -s /opt/bin/mount_afp $(1)/opt/bin/afp_client
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libafpclient.so* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libafpclient.so* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,afpfs-ng))

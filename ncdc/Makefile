@@ -43,7 +43,7 @@ endef
 
 define Package/ncdc/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/ncdc $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/ncdc $(1)/opt/bin/
 endef
 
 $(eval $(call BuildPackage,ncdc))
