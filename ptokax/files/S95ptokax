@@ -2,7 +2,7 @@
 
 ENABLED=yes
 PROCS=PtokaX
-ARGS="-d -c /opt/share/ptokax/"
+ARGS="-d -c /Apps/opt/share/ptokax/"
 PREARGS=""
 DESC=$PROCS
 PATH=/Apps/opt/sbin:Apps/opt/bin:Apps/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin

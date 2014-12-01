@@ -46,9 +46,9 @@ endef
 
 define Package/ipset4/install
 	$(INSTALL_DIR) $(1)/opt/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/ipset $(1)/opt/sbin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/ipset $(1)/opt/sbin/
 	$(INSTALL_DIR) $(1)/opt/lib/ipset
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/lib/ipset/libipset*.so $(1)/opt/lib/ipset/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/lib/ipset/libipset*.so $(1)/opt/lib/ipset/
 endef
 
 $(eval $(call BuildPackage,ipset4))

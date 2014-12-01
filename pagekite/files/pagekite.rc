@@ -13,4 +13,4 @@ delete_line_to_enable
 defaults
 
 # Uncomment for logging
-#logfile=/opt/var/log/pagekite.log
+#logfile=/Apps/opt/var/log/pagekite.log

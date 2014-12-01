@@ -51,7 +51,7 @@ endef
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)$(PYTHON_PKG_DIR)
 	$(CP) \
-	    $(PKG_INSTALL_DIR)$(PYTHON_PKG_DIR)/* \
+	    $(PKG_INSTALL_DIR)/Apps$(PYTHON_PKG_DIR)/* \
 	    $(1)$(PYTHON_PKG_DIR)/
 
 	$(INSTALL_DIR) $(1)/opt/bin $(1)/opt/etc/pagekite.d $(1)/opt/var/log $(1)/opt/etc/init.d

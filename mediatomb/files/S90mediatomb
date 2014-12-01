@@ -2,7 +2,7 @@
 
 ENABLED=yes
 PROCS=mediatomb
-ARGS="-d -u root -g root -P /opt/var/run/mediatomb.pid -l /opt/var/log/mediatomb.log -m /opt/etc -f mediatomb -p 50501"
+ARGS="-d -u root -g root -P /Apps/opt/var/run/mediatomb.pid -l /Apps/opt/var/log/mediatomb.log -m /Apps/opt/etc -f mediatomb -p 50501"
 PREARGS=""
 DESC=$PROCS
 PATH=/Apps/opt/sbin:Apps/opt/bin:Apps/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin

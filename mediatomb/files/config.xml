@@ -9,8 +9,8 @@
     </ui>
     <name>MediaTomb</name>
     <udn>uuid:e0006ef7-cba2-408a-ac7d-2d620ef93dcc</udn>
-    <home>/opt/etc/mediatomb</home>
-    <webroot>/opt/share/mediatomb/web</webroot>
+    <home>/Apps/opt/etc/mediatomb</home>
+    <webroot>/Apps/opt/share/mediatomb/web</webroot>
     <storage>
       <sqlite3 enabled="yes">
         <database-file>mediatomb.db</database-file>
@@ -46,10 +46,10 @@
     <filesystem-charset>UTF-8</filesystem-charset>
     <metadata-charset>CP1251</metadata-charset>
     <scripting script-charset="UTF-8">
-      <common-script>/opt/share/mediatomb/js/common.js</common-script>
-      <playlist-script>/opt/share/mediatomb/js/playlists.js</playlist-script>
+      <common-script>/Apps/opt/share/mediatomb/js/common.js</common-script>
+      <playlist-script>/Apps/opt/share/mediatomb/js/playlists.js</playlist-script>
       <virtual-layout type="builtin">
-        <import-script>/opt/share/mediatomb/js/import.js</import-script>
+        <import-script>/Apps/opt/share/mediatomb/js/import.js</import-script>
       </virtual-layout>
     </scripting>
     <mappings>
