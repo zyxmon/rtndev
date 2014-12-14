@@ -4,10 +4,12 @@
 # terminal session. Point your f\w (if necessery) to execute /opt/etc/profile
 # at console logon.
 
-export PATH='/Apps/opt/usr/sbin:/Apps/opt/sbin:/Apps/opt/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin'
+export PATH=/Apps/opt/bin:/Apps/opt/sbin:$PATH
+export TERMINFO=/Apps/opt/share/terminfo 
 export TERM=xterm
-export TMP=/opt/tmp
-export TEMP=/opt/tmp
+export TMP=/Apps/opt/tmp
+export TEMP=/Apps/opt/tmp
+alias mc="mc -c"
 
 # You may define localization
 #export LANG='ru_RU.UTF-8'
