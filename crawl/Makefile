@@ -52,9 +52,9 @@ endef
 
 define Package/crawl/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/crawl $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/crawl $(1)/opt/bin
 	$(INSTALL_DIR) $(1)/opt/share/crawl
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/crawl/* $(1)/opt/share/crawl/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/crawl/* $(1)/opt/share/crawl/
 	$(INSTALL_DIR) $(1)/opt/var/crawl/{morgue,saves}
 endef
 
