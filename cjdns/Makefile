@@ -11,8 +11,8 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=cjdns
-PKG_VERSION:=0.5-20131009
-PKG_REV:=fa15457db8d53e69e0b8af291c1d844978434c7b
+PKG_VERSION:=0.5-20142112
+PKG_REV:=f176d2c0271d764412bd13c7adf7ea475fa25e0f
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
@@ -24,7 +24,7 @@ PKG_SOURCE_VERSION:=$(PKG_REV)
 PKG_BUILD_DEPENDS:=nacl
 
 include $(INCLUDE_DIR)/package.mk
-include $(INCLUDE_DIR)/cmake.mk
+#include $(INCLUDE_DIR)/cmake.mk
 
 define Package/cjdns
 	SECTION:=net
@@ -41,16 +41,29 @@ define Package/cjdns/description
  for address allocation and a distributed hash table for routing.
 endef
 
-CMAKE_OPTIONS += \
-	-DOPENWRT=1 \
-	-DNO_CODESTYLE=1 \
-	-DWITH_PIE=0 \
-	-DHAVE_NACL=1 \
-	-DNACL_INCLUDE_DIRS="$(STAGING_DIR)/opt/include/nacl"
+TARGET_LDFLAGS += -lpthread
+
+define Build/Compile
+	CROSS="true" \
+	CC="$(TARGET_CC)" \
+	CFLAGS="$(TARGET_CFLAGS)" \
+	LDFLAGS="$(TARGET_LDFLAGS)" \
+	SYSTEM="linux" \
+	TARGET_ARCH="$(CONFIG_ARCH)" \
+	Seccomp_NO=1 \
+	$(PKG_BUILD_DIR)/do
+endef
 
 define Package/cjdns/install
-	$(INSTALL_DIR) $(1)/opt/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/cjdroute2 $(1)/opt/sbin/
+	$(INSTALL_DIR) \
+		$(1)/opt/sbin \
+		$(1)/opt/bin \
+	$(INSTALL_BIN) \
+		$(PKG_BUILD_DIR)/cjdroute \
+		$(1)/opt/sbin
+	$(INSTALL_BIN) \
+		$(PKG_BUILD_DIR)/publictoip6 \
+		$(1)/opt/bin
 endef
 
 $(eval $(call BuildPackage,cjdns))
