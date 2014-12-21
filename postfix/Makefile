@@ -36,32 +36,32 @@ define Package/postfix/description
 endef
 
 POSTFIX_CARGS = \
-	-DDEF_COMMAND_DIR=\"/opt/sbin\" \
-	-DDEF_CONFIG_DIR=\"/opt/etc/postfix\" \
-	-DDEF_DAEMON_DIR=\"/opt/libexec/postfix\" \
-	-DDEF_MAILQ_PATH=\"/opt/bin/mailq\" \
-	-DDEF_HTML_DIR=\"/opt/share/doc/postfix/html\" \
-	-DDEF_MANPAGE_DIR=\"/opt/man\" \
-	-DDEF_NEWALIAS_PATH=\"/opt/bin/newaliases\" \
-	-DDEF_QUEUE_DIR=\"/opt/var/spool/postfix\" \
-	-DDEF_README_DIR=\"/opt/share/doc/postfix/readme\" \
-	-DDEF_SENDMAIL_PATH=\"/opt/sbin/sendmail\" \
+	-DDEF_COMMAND_DIR=\"/Apps/opt/sbin\" \
+	-DDEF_CONFIG_DIR=\"/Apps/opt/etc/postfix\" \
+	-DDEF_DAEMON_DIR=\"/Apps/opt/libexec/postfix\" \
+	-DDEF_MAILQ_PATH=\"/Apps/opt/bin/mailq\" \
+	-DDEF_HTML_DIR=\"/Apps/opt/share/doc/postfix/html\" \
+	-DDEF_MANPAGE_DIR=\"/Apps/opt/man\" \
+	-DDEF_NEWALIAS_PATH=\"/Apps/opt/bin/newaliases\" \
+	-DDEF_QUEUE_DIR=\"/Apps/opt/var/spool/postfix\" \
+	-DDEF_README_DIR=\"/Apps/opt/share/doc/postfix/readme\" \
+	-DDEF_SENDMAIL_PATH=\"/Apps/opt/sbin/sendmail\" \
 	-DHAS_PCRE \
 	-DUSE_CYRUS_SASL \
 	-DUSE_SASL_AUTH \
 	-DNO_NIS \
 
 HOST_POSTFIX_CARGS = \
-	-DDEF_COMMAND_DIR=\"/opt/sbin\" \
-	-DDEF_CONFIG_DIR=\"/opt/etc/postfix\" \
-	-DDEF_DAEMON_DIR=\"/opt/libexec/postfix\" \
-	-DDEF_MAILQ_PATH=\"/opt/bin/mailq\" \
-	-DDEF_HTML_DIR=\"/opt/share/doc/postfix/html\" \
-	-DDEF_MANPAGE_DIR=\"/opt/man\" \
-	-DDEF_NEWALIAS_PATH=\"/opt/bin/newaliases\" \
-	-DDEF_QUEUE_DIR=\"/opt/var/spool/postfix\" \
-	-DDEF_README_DIR=\"/opt/share/doc/postfix/readme\" \
-	-DDEF_SENDMAIL_PATH=\"/opt/sbin/sendmail\" \
+	-DDEF_COMMAND_DIR=\"/Apps/opt/sbin\" \
+	-DDEF_CONFIG_DIR=\"/Apps/opt/etc/postfix\" \
+	-DDEF_DAEMON_DIR=\"/Apps/opt/libexec/postfix\" \
+	-DDEF_MAILQ_PATH=\"/Apps/opt/bin/mailq\" \
+	-DDEF_HTML_DIR=\"/Apps/opt/share/doc/postfix/html\" \
+	-DDEF_MANPAGE_DIR=\"/Apps/opt/man\" \
+	-DDEF_NEWALIAS_PATH=\"/Apps/opt/bin/newaliases\" \
+	-DDEF_QUEUE_DIR=\"/Apps/opt/var/spool/postfix\" \
+	-DDEF_README_DIR=\"/Apps/opt/share/doc/postfix/readme\" \
+	-DDEF_SENDMAIL_PATH=\"/Apps/opt/sbin/sendmail\" \
 	-DNO_DB \
 	-DNO_DEVPOLL \
 	-DNO_EPOLL \
@@ -106,28 +106,31 @@ define Package/postfix/install
 	    $(PKG_BUILD_DIR)/bin/postconf
 	(cd $(PKG_BUILD_DIR); \
 	    $(MAKE) \
-		install_root=$(1) \
+		install_root=$(PKG_INSTALL_DIR) \
 		readme_directory=no \
 		html_directory=no \
 		manpage_directory=no \
-		queue_directory=/opt/var/spool/postfix \
-		data_directory=/opt/var/lib/postfix \
-		command_directory=/opt/sbin \
-		daemon_directory=/opt/libexec/postfix \
-		sendmail_path=/opt/sbin/sendmail \
-		newaliases_path=/opt/bin/newaliases \
-		mailq_path=/opt/bin/mailq \
-		sample_directory=/opt/etc/postfix \
+		queue_directory=/Apps/opt/var/spool/postfix \
+		data_directory=/Apps/opt/var/lib/postfix \
+		command_directory=/Apps/opt/sbin \
+		daemon_directory=/Apps/opt/libexec/postfix \
+		sendmail_path=/Apps/opt/sbin/sendmail \
+		newaliases_path=/Apps/opt/bin/newaliases \
+		mailq_path=/Apps/opt/bin/mailq \
+		sample_directory=/Apps/opt/etc/postfix \
 		non-interactive-package \
 	)
 	# Removing those useless man pages
-	$(RM) -r $(1)/opt/local/man
+	$(RM) -r $(1)/Apps/opt/local/man
+	# Copying to pack dir
+	$(INSTALL_DIR) $(1)/opt
+	cp -rf $(PKG_INSTALL_DIR)/Apps/opt/* $(1)/opt
 	# Fixing configuration (we don't want mail directory to be on tmpfs)
 	$(PKG_BUILD_DIR)/bin/postconf \
 	    -c $(1)/opt/etc/postfix/ \
 	    -e \
-		"data_directory = /opt/var/lib/postfix" \
-		"mail_spool_directory = /opt/var/mail"
+		"data_directory = /Apps/opt/var/lib/postfix" \
+		"mail_spool_directory = /Apps/opt/var/mail"
 	# Restoring target postconf
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/bin/postconf.target \
 	    $(1)/opt/sbin/postconf
