@@ -30,7 +30,7 @@ define Package/cjdns
 	SECTION:=net
 	CATEGORY:=Network
 	SUBMENU:=Routing and Redirection
-	DEPENDS:=+libpthread
+	DEPENDS:=+libpthread +librt
 	TITLE:=Experimental self configuring routing protocol
 	URL:=$(PKG_SOURCE_URL)
 	MAINTAINER:=Entware team, entware.wl500g.info
@@ -55,15 +55,10 @@ define Build/Compile
 endef
 
 define Package/cjdns/install
-	$(INSTALL_DIR) \
-		$(1)/opt/sbin \
-		$(1)/opt/bin \
-	$(INSTALL_BIN) \
-		$(PKG_BUILD_DIR)/cjdroute \
-		$(1)/opt/sbin
-	$(INSTALL_BIN) \
-		$(PKG_BUILD_DIR)/publictoip6 \
-		$(1)/opt/bin
+	$(INSTALL_DIR) $(1)/opt/sbin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/cjdroute $(1)/opt/sbin
+	$(INSTALL_DIR) $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/publictoip6 $(1)/opt/bin
 endef
 
 $(eval $(call BuildPackage,cjdns))

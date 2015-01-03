@@ -16,7 +16,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/qnapware
 	SECTION:=libs
 	CATEGORY:=Libraries
-	DEPENDS:=+libc +libgcc +libstdcpp +libpthread +librt +findutils +terminfo
+	DEPENDS:=+libc +libgcc +libstdcpp +libpthread +librt +locales +findutils +terminfo 
 	TITLE:=provides basic toolchain libraries (dummy)
 	MAINTAINER:=Zyxmon
 endef

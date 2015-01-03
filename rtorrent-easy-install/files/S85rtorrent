@@ -1,13 +1,34 @@
 #!/bin/sh
 
-ENABLED=yes
-PROCS=rtorrent
-ARGS="-D -n -o import=/opt/etc/rtorrent/rtorrent.conf"
-PREARGS="screen -dmS rtorrent"
-DESC=$PROCS
-PATH=/Apps/opt/sbin:Apps/opt/bin:Apps/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+prefix="/Apps/opt"
+PATH=${prefix}/bin:${prefix}/sbin:/sbin:/bin:/usr/sbin:/usr/bin
 
-if [ -z "`pidof $PROCS`" ]; then
-    rm -f /opt/var/rpc.socket
-fi
-. /Apps/opt/etc/init.d/rc.func
+start() {
+	echo "starting rtorrent..."
+	screen -dmS rtorrent rtorrent -D -n -o import=/Apps/opt/etc/rtorrent/rtorrent.conf
+	}
+
+stop() {
+	echo "stopping rtorrent..."
+	 screen -S rtorrent -X quit
+	}
+
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+		restart)
+		stop
+		sleep 5
+		start
+		;;
+	*)
+		echo "Usage: $0 (start|stop|restart)"
+		exit 1
+		;;
+esac
+
+exit 0

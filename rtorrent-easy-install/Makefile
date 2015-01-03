@@ -53,18 +53,18 @@ echo -e "\n#### Welcome to rtorrent easy installation script! \n\
     Please, answer a few question to configure torrent client. \n\
     Default aswers given in [brackets], just hit Enter to accept it.\n"
 
-www_cfg=/opt/etc/lighttpd/conf.d/99-rtorrent-fastcgi-scgi-auth.conf
-rt_cfg=/opt/etc/rtorrent/rtorrent.conf
+www_cfg=/Apps/opt/etc/lighttpd/conf.d/99-rtorrent-fastcgi-scgi-auth.conf
+rt_cfg=/Apps/opt/etc/rtorrent/rtorrent.conf
 
 #### Configuring web-server
-cat >> $$www_cfg << EOF
+cat > $$www_cfg << EOF
 
 server.modules += ( "mod_scgi" )
 scgi.server = (
   "/RPC2" =>
     ( "127.0.0.1" =>
      (
-        "socket" => "/opt/var/rpc.socket",
+        "socket" => "/Apps/opt/var/rpc.socket",
         "check-local" => "disable"
       )
     )
@@ -75,7 +75,7 @@ fastcgi.server = (
   ".php" =>
     ( "localhost" =>
       ( "socket" => "/tmp/php-fcgi.sock",
-        "bin-path" => "/opt/bin/php-fcgi",
+        "bin-path" => "/Apps/opt/bin/php-fcgi",
         "max-procs" => 1,
         "bin-environment" =>
           ( "PHP_FCGI_CHILDREN" => "2",
@@ -92,12 +92,12 @@ echo -n "Type \"username:password\" if you want to protect Web UI or hit Enter \
 read user_password
 if [ ! -z "$$user_password" ]
 then
-    echo "$$user_password" > /opt/etc/lighttpd/rutorrent_passwd
+    echo "$$user_password" > /Apps/opt/etc/lighttpd/rutorrent_passwd
     cat >> $$www_cfg << EOF
 
 server.modules += ( "mod_auth" )
 auth.backend = "plain"
-auth.backend.plain.userfile = "/opt/etc/lighttpd/rutorrent_passwd"
+auth.backend.plain.userfile = "/Apps/opt/etc/lighttpd/rutorrent_passwd"
 auth.require = (
   "/rutorrent/" =>
     ( "method"  => "basic",
@@ -117,8 +117,8 @@ echo "server.port = $$web_port" >> $$www_cfg
 #### Configuring torrent client
 cat > $$rt_cfg << EOF
 max_uploads = 8
-session = /opt/etc/rtorrent/session
-schedule = watch_directory,5,5,load_start=/opt/etc/rtorrent/watchdir/*.torrent
+session = /Apps/opt/etc/rtorrent/session
+schedule = watch_directory,5,5,load_start=/Apps/opt/etc/rtorrent/watchdir/*.torrent
 schedule = untied_directory,5,5,stop_untied=
 schedule = low_diskspace,5,60,close_low_diskspace=100M
 bind = 0.0.0.0
@@ -129,7 +129,7 @@ encryption = allow_incoming,enable_retry,prefer_plaintext
 dht = auto
 dht_port = 51412
 peer_exchange = yes
-scgi_local = /opt/var/rpc.socket
+scgi_local = /Apps/opt/var/rpc.socket
 encoding_list = UTF-8
 max_uploads_global = 32
 max_downloads_global = 64
@@ -145,9 +145,9 @@ read upload_speed
 echo "upload_rate = $$upload_speed" >> $$rt_cfg
 
 echo -n "Enter folder name on USB drive where torrent content should be \
-    stored [/opt/torrents]: "
+    stored [/Apps/opt/torrents]: "
 read -r storage_folder
-[ -z "$$storage_folder" ] && storage_folder=/opt/torrents
+[ -z "$$storage_folder" ] && storage_folder=/Apps/opt/torrents
 [ -d "$$storage_folder" ] || mkdir -p $$storage_folder
 echo "directory = $$storage_folder" >> $$rt_cfg
 
@@ -160,8 +160,8 @@ read wish_to_start
 [ -z "$$wish_to_start" ] && wish_to_start=y
 if [ "$$wish_to_start" == "y" ]
 then
-    /opt/etc/init.d/S80lighttpd start
-    /opt/etc/init.d/S85rtorrent start
+    /Apps/opt/etc/init.d/S80lighttpd start
+    /Apps/opt/etc/init.d/S85rtorrent start
 fi
 endef
 
