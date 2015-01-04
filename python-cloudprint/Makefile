@@ -47,7 +47,7 @@ define Package/python-cloudprint/install
 		$(1)$(PYTHON_PKG_DIR)
 	chmod +x $(1)$(PYTHON_PKG_DIR)/cloudprint/cloudprint.py
 	$(INSTALL_DIR) $(1)/opt/{bin,var}
-	ln -s $(PYTHON_PKG_DIR)/cloudprint/cloudprint.py $(1)/opt/bin/cloudprint
+	ln -s /Apps$(PYTHON_PKG_DIR)/cloudprint/cloudprint.py $(1)/opt/bin/cloudprint
 endef
 
 $(eval $(call BuildPackage,python-cloudprint))

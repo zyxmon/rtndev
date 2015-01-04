@@ -125,6 +125,10 @@ define Package/postfix/install
 	# Copying to pack dir
 	$(INSTALL_DIR) $(1)/opt
 	cp -rf $(PKG_INSTALL_DIR)/Apps/opt/* $(1)/opt
+	$(RM) $(1)/opt/bin/mailq
+	$(RM) $(1)/opt/bin/newaliases
+	ln -s /Apps/opt/sbin/sendmail $(1)/opt/bin/mailq
+	ln -s /Apps/opt/sbin/sendmail $(1)/opt/bin/newaliases
 	# Fixing configuration (we don't want mail directory to be on tmpfs)
 	$(PKG_BUILD_DIR)/bin/postconf \
 	    -c $(1)/opt/etc/postfix/ \
