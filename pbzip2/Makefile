@@ -42,8 +42,8 @@ MAKE_VARS += \
 define Package/pbzip2/install
 	$(INSTALL_DIR) $(1)/opt/bin
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/pbzip2 $(1)/opt/bin/
-	$(LN) -s /opt/bin/pbzip2 $(1)/opt/bin/pbunzip2
-	$(LN) -s /opt/bin/pbzip2 $(1)/opt/bin/pbzcat
+	$(LN) -s /Apps/opt/bin/pbzip2 $(1)/opt/bin/pbunzip2
+	$(LN) -s /Apps/opt/bin/pbzip2 $(1)/opt/bin/pbzcat
 endef
 
 $(eval $(call BuildPackage,pbzip2))
