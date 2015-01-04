@@ -81,6 +81,9 @@ HOST_MAKE_VARS += \
 TARGET_CFLAGS += \
 	-DNO_NIS \
 
+TARGET_LDFLAGS+= -lresolv
+
+
 HOST_CFLAGS += \
 	-DNO_NIS \
 	-DNO_TLS \
