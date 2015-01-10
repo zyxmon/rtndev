@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011-2014 Entware
+# Copyright (C) 2011-2015 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -77,6 +77,10 @@ $(eval $(call Download,pvpgn_supp))
 define Build/Prepare
 	$(call Build/Prepare/Default)
 	tar -C $(PKG_BUILD_DIR) -xvzf $(DL_DIR)/$(PVPGN_SUPP).tar.gz
+endef
+
+define Build/InstallDev
+	true
 endef
 
 define Package/pvpgn/install

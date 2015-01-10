@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011-2014 Entware
+# Copyright (C) 2011-2015 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -50,6 +50,10 @@ TARGET_CFLAGS += \
 
 define Package/accel-ppp/conffiles
 /opt/etc/accel-ppp.conf
+endef
+
+define Build/InstallDev
+	true
 endef
 
 define Package/accel-ppp/install

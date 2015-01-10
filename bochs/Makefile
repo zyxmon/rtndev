@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011-2014 Entware
+# Copyright (C) 2011-2015 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -8,20 +8,20 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=bochs
-PKG_VERSION:=2.6.6
+PKG_VERSION:=2.6.7
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=@SF/$(PKG_NAME)/$(PKG_VERSION)
-PKG_MDSUM:=f5c8483bc478381dd5979f6b3972d44e
+PKG_MDSUM:=8ae62e24c19dc862f5e8660a34ab31b2
 
 PKG_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
 
 define Package/bochs
-	SECTION:=emulator
-	CATEGORY:=Emulators
+	SECTION:=utils
+	CATEGORY:=Utilities
 	DEPENDS:=+libpthread +libstdcpp
 	TITLE:=x86 PC emulator
 	URL:=http://bochs.sourceforge.net/
@@ -49,7 +49,7 @@ TARGET_LDFLAGS += \
 
 define Package/bochs/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/{bochs,bxcommit,bximage} \
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/{bochs,bximage} \
 		$(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/share/bochs
 	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/Apps/opt/share/bochs/{BIOS,VGABIOS}-* \

@@ -1,30 +1,26 @@
 #
-# Copyright (C) 2011-2014 Entware
+# Copyright (C) 2011-2015 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
 #
-# Reworked version of https://github.com/cjdelisle/cjdns-openwrt/blob/master/cjdns/Makefile
-# A newer versions include node.js code and can't be cross-compiled.
+# Reworked version of https://github.com/SeattleMeshnet/meshbox/blob/master/cjdns/Makefile
 #
 
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=cjdns
-PKG_VERSION:=0.5-20142112
+PKG_VERSION:=0.5-20141122
 PKG_REV:=f176d2c0271d764412bd13c7adf7ea475fa25e0f
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE_URL:=git://github.com/cjdelisle/cjdns.git
+PKG_SOURCE_URL:=https://github.com/cjdelisle/cjdns
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_VERSION:=$(PKG_REV)
 
-PKG_BUILD_DEPENDS:=nacl
-
 include $(INCLUDE_DIR)/package.mk
-#include $(INCLUDE_DIR)/cmake.mk
 
 define Package/cjdns
 	SECTION:=net
@@ -44,14 +40,17 @@ endef
 TARGET_LDFLAGS += -lpthread
 
 define Build/Compile
-	CROSS="true" \
+	(cd $(PKG_BUILD_DIR) && \
+	CROSS="$(TARGET_CROSS)" \
 	CC="$(TARGET_CC)" \
+	AR="$(TARGET_AR)" \
+	RANLIB="$(TARGET_RANLIB)" \
 	CFLAGS="$(TARGET_CFLAGS)" \
 	LDFLAGS="$(TARGET_LDFLAGS)" \
 	SYSTEM="linux" \
 	TARGET_ARCH="$(CONFIG_ARCH)" \
 	Seccomp_NO=1 \
-	$(PKG_BUILD_DIR)/do
+	./do)
 endef
 
 define Package/cjdns/install

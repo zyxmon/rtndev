@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011-2014 Entware
+# Copyright (C) 2011-2015 Entware
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -8,8 +8,8 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=squeezelite
-PKG_VERSION:=1.6.4
-PKG_REV:=75a72d5f86e1675b5c5892ee5fb2278bbe8dc695
+PKG_VERSION:=1.6.5
+PKG_REV:=1bcddea0adb1a4dc6a96b46b30571867aa529b9a
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
