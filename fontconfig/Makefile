@@ -36,8 +36,6 @@ define Package/fontconfig/description
  configuring and customizing font access.
 endef
 
-TARGET_CFLAGS += -I$(STAGING_DIR)/opt/include/freetype2 
-
 CONFIGURE_ARGS += \
 	--disable-docs
 
