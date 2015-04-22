@@ -8,12 +8,15 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=accel-ppp
-PKG_VERSION:=1.9.0
+PKG_VERSION:=1.9.0-20150305
+PKG_REV:=c5e859f1d3a4317f304366e5f083ef4ff7828e5d
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
-PKG_SOURCE_URL:=@SF/$(PKG_NAME)
-PKG_MD5SUM:=9b02c5c42ad939ea393811f97e844f54
+PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
+PKG_SOURCE_URL:=git://git.code.sf.net/p/$(PKG_NAME)/code
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_VERSION:=$(PKG_REV)
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
@@ -58,7 +61,7 @@ endef
 
 define Package/accel-ppp/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt$(PKG_INSTALL_DIR)/opt/bin/accel-cmd $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/accel-cmd $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/sbin
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/accel-pppd $(1)/opt/sbin/
 	$(INSTALL_DIR) $(1)/opt/lib/accel-ppp
