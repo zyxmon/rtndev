@@ -20,7 +20,7 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/SocksipyChain-$(PKG_VERSION)
 include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python-package.mk)
 
-PKG_BUILD_DEPENDS:=python distribute distribute/host
+PKG_BUILD_DEPENDS:=python distribute/host
 
 define Package/$(PKG_NAME)
 	SUBMENU:=Python
@@ -50,6 +50,7 @@ define Package/$(PKG_NAME)/install
 
 	$(INSTALL_DIR) $(1)/opt/bin
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/* $(1)/opt/bin/
+	$(SED) 's,$(HOST_PYTHON_BIN),/Apps/opt/bin/python,g' $(1)/opt/bin/sockschain
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))

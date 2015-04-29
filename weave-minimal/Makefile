@@ -23,7 +23,7 @@ $(call include_mk, python-package.mk)
 define Package/weave-minimal
 	SECTION:=net
 	CATEGORY:=Network
-	DEPENDS:=+python-sqlite3 +python-werkzeug +dtach +python-gevent
+	DEPENDS:=+python-sqlite3 +python-werkzeug +dtach +python-gevent +python-openssl +distribute
 	TITLE:=a Firefox Sync Server
 	URL:=https://github.com/posativ/weave-minimal
 	MAINTAINER:=Entware team, entware.wl500g.info
@@ -44,7 +44,7 @@ define Package/weave-minimal/install
 	$(CP) \
 		$(PKG_INSTALL_DIR)$(PYTHON_PKG_DIR)/* \
 		$(1)$(PYTHON_PKG_DIR)
-	$(SED) 's,$(STAGING_DIR)/opt/bin/hostpython,/Apps/opt/bin/python,g' $(PKG_INSTALL_DIR)/opt/bin/weave-minimal
+	$(SED) 's,$(HOST_PYTHON_BIN),/Apps/opt/bin/python,g' $(PKG_INSTALL_DIR)/opt/bin/weave-minimal
 	$(INSTALL_DIR) $(1)/opt/bin
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/weave-minimal $(1)/opt/bin
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
