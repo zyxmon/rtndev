@@ -1,6 +1,6 @@
 --- a/Makefile
 +++ b/Makefile
-@@ -1,16 +1 @@
+@@ -1,18 +1 @@
 -# Common makefile -- loads make rules for each platform
 -
 -OSTYPE=$(shell uname -s)
@@ -16,5 +16,7 @@
 -ifeq ($(OSTYPE),FreeBSD)
 -	include make-freebsd.mk
 -endif
--
+-ifeq ($(OSTYPE),OpenBSD)
+-	include make-freebsd.mk
+-endif
 +include make-linux.mk

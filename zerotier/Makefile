@@ -8,8 +8,8 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=zerotier
-PKG_VERSION:=1.0.2
-PKG_REV:=95e303d6f316e4a929d119a4255c79cca5a8a6e6
+PKG_VERSION:=1.0.3-dev
+PKG_REV:=b3b9af0dd85ac755d41122cf2d0428d7f85e4cce
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
@@ -33,6 +33,7 @@ endef
 define Package/zerotier/description
  Create flat virtual Ethernet networks of almost unlimited size.
 endef
+
 
 define Package/zerotier/install
 	$(INSTALL_DIR) $(1)/opt/bin

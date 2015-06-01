@@ -1,6 +1,6 @@
---- a/node/Defaults.cpp
-+++ b/node/Defaults.cpp
-@@ -60,7 +60,7 @@
+--- a/service/OneService.cpp
++++ b/service/OneService.cpp
+@@ -1273,7 +1273,7 @@
  	return std::string("/var/db/zerotier-one");
  #else
  	// Use /var/lib for Linux and other *nix
