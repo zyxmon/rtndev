@@ -52,7 +52,7 @@ endef
 
 define Package/fontconfig/postinst
 #!/bin/sh
-/opt/bin/fc-cache --force --verbose
+/Apps/opt/bin/fc-cache --force --verbose
 endef
 
 define Build/InstallDev

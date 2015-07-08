@@ -49,7 +49,7 @@ endef
 
 define Package/ubuntu-fonts/postinst
 #!/bin/sh
-/opt/bin/fc-cache --force --verbose
+/Apps/opt/bin/fc-cache --force --verbose
 endef
 
 $(eval $(call BuildPackage,ubuntu-fonts))

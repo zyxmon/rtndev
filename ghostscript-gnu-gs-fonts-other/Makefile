@@ -48,7 +48,7 @@ endef
 
 define Package/ghostscript-gnu-gs-fonts-other/postinst
 #!/bin/sh
-/opt/bin/fc-cache --force --verbose
+/Apps/opt/bin/fc-cache --force --verbose
 endef
 
 $(eval $(call BuildPackage,ghostscript-gnu-gs-fonts-other))
