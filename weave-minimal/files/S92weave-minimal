@@ -7,6 +7,6 @@ SOCK=/opt/var/weave.sock
 ARGS="--data-dir=/opt/var/weave --host=127.0.0.1 --port=8080"
 PREARGS="dtach -n $SOCK"
 DESC=$PROCS
-PATH=/Apps/opt/sbin:/Apps/opt/bin:/Apps/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PATH=/Apps/opt/sbin:/Apps/opt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 . /opt/etc/init.d/rc.func

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PATH=/Apps/opt/bin:/Apps/opt/sbin:/sbin:/bin:/usr/sbin:/usr/bin
+PATH=/Apps/opt/bin:/Apps/opt/sbin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 start()
 {
