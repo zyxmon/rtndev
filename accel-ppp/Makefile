@@ -39,7 +39,7 @@ endef
 
 CMAKE_OPTIONS += \
 	-DBUILD_DRIVER=FALSE \
-	-DCMAKE_INSTALL_PREFIX=/opt \
+	-DCMAKE_INSTALL_PREFIX=/Apps/opt \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DLOG_PGSQL=FALSE \
 	-DSHAPER=FALSE \
@@ -61,20 +61,20 @@ endef
 
 define Package/accel-ppp/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/accel-cmd $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/accel-cmd $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/accel-pppd $(1)/opt/sbin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/accel-pppd $(1)/opt/sbin/
 	$(INSTALL_DIR) $(1)/opt/lib/accel-ppp
 	$(INSTALL_BIN) \
-		$(PKG_INSTALL_DIR)/opt/lib/accel-ppp/lib*.so \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/accel-ppp/lib*.so \
 		$(1)/opt/lib/accel-ppp
 	$(INSTALL_DIR) $(1)/opt/share/accel-ppp/l2tp
 	$(INSTALL_DATA) \
-		$(PKG_INSTALL_DIR)/opt/share/accel-ppp/l2tp/dictionary* \
+		$(PKG_INSTALL_DIR)/Apps/opt/share/accel-ppp/l2tp/dictionary* \
 		$(1)/opt/share/accel-ppp/l2tp
 	$(INSTALL_DIR) $(1)/opt/share/accel-ppp/radius
 	$(INSTALL_DATA) \
-		$(PKG_INSTALL_DIR)/opt/share/accel-ppp/radius/dictionary* \
+		$(PKG_INSTALL_DIR)/Apps/opt/share/accel-ppp/radius/dictionary* \
 		$(1)/opt/share/accel-ppp/radius
 	$(INSTALL_DIR) $(1)/opt/etc
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/accel-pppd/accel-ppp.conf $(1)/opt/etc
