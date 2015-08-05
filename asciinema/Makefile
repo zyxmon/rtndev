@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=asciinema
 PKG_VERSION:=0.9.8
-PKG_RELEASE:=3
+PKG_RELEASE:=5
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://pypi.python.org/packages/source/a/$(PKG_NAME)
@@ -36,19 +36,22 @@ define Package/asciinema/conffiles
 /opt/etc/asciinema/config
 endef
 
-PYTHONPATH:=$(PKG_INSTALL_DIR)/Apps/$(PYTHON_PKG_DIR)
 define Build/Compile
-	$(INSTALL_DIR) $(PYTHONPATH)
-	$(call Build/Compile/PyMod,,install --prefix="$(PKG_INSTALL_DIR)/Apps/opt")
+	$(call Build/Compile/PyMod,,install \
+	    --prefix=/opt \
+	    --root="$(PKG_INSTALL_DIR)" \
+	)
 endef
 
 define Package/asciinema/install
 	$(INSTALL_DIR) $(1)$(PYTHON_PKG_DIR)
 	$(CP) \
-	    $(PKG_INSTALL_DIR)/Apps$(PYTHON_PKG_DIR)/asciinema-*.egg \
+	    $(PKG_INSTALL_DIR)$(PYTHON_PKG_DIR)/* \
 	    $(1)$(PYTHON_PKG_DIR)
+	 $(SED) 's,$(HOST_PYTHON_BIN),/Apps/opt/bin/python,g' \
+	    $(PKG_INSTALL_DIR)/opt/bin/$(PKG_NAME)
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/bin/$(PKG_NAME) $(1)/opt/bin
+	$(CP) $(PKG_INSTALL_DIR)/opt/bin/$(PKG_NAME) $(1)/opt/bin
 endef
 
 $(eval $(call BuildPackage,asciinema))

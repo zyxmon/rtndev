@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=weave-minimal
 PKG_VERSION:=1.5.1
-PKG_RELEASE:=2
+PKG_RELEASE:=4
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://pypi.python.org/packages/source/w/weave-minimal
@@ -33,19 +33,22 @@ define Package/weave-minimal/description
  DOES NOT WORK WITH FIREFOX 29 OR LATER.
 endef
 
-PYTHONPATH:=$(PKG_INSTALL_DIR)/Apps/$(PYTHON_PKG_DIR)
 define Build/Compile
-	$(INSTALL_DIR) $(PYTHONPATH)
-	$(call Build/Compile/PyMod,,install --prefix="$(PKG_INSTALL_DIR)/Apps/opt")
+	$(call Build/Compile/PyMod,,install \
+	    --prefix=/opt \
+	    --root="$(PKG_INSTALL_DIR)" \
+	)
 endef
 
 define Package/weave-minimal/install
 	$(INSTALL_DIR) $(1)$(PYTHON_PKG_DIR)
 	$(CP) \
-		$(PKG_INSTALL_DIR)/Apps$(PYTHON_PKG_DIR)/weave_minimal*.egg \
+		$(PKG_INSTALL_DIR)$(PYTHON_PKG_DIR)/* \
 		$(1)$(PYTHON_PKG_DIR)
+	$(SED) 's,$(HOST_PYTHON_BIN),/opt/bin/python,g' \
+	    $(PKG_INSTALL_DIR)/opt/bin/weave-minimal
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/weave-minimal $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/weave-minimal $(1)/opt/bin
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
 	$(INSTALL_BIN) ./files/S92weave-minimal $(1)/opt/etc/init.d
 	$(INSTALL_DIR) $(1)/opt/var/weave
@@ -55,7 +58,7 @@ define Package/weave-minimal/postinst
 #!/bin/sh
 
 echo Don\'t forget to add new user by
-echo \'weave-minimal --data-dir=/Apps/opt/var/weave --register user:password\'
+echo \'weave-minimal --data-dir=/opt/var/weave --register user:password\'
 echo and edit host\\port at \'/opt/etc/init.d/S92weave-minimal\'
 endef
 
